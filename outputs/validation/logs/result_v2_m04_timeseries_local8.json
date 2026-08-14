@@ -1,0 +1,15 @@
+﻿{
+    "run_id":  "v2_m04_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  192.6358199230017,
+    "transform_seconds":  22.71573724300106,
+    "load_seconds":  17.65836155999932,
+    "total_seconds":  233.00991872600207,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786308880383",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_timeseries_local8.csv"
+}

@@ -1,0 +1,22 @@
+[2026-07-20T16:31:14.9226317+03:00] START order=1 run=v2_w00_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_w00_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  261.52196531696245,
+    "transform_seconds":  29.144912299932912,
+    "load_seconds":  4.420678556896746,
+    "total_seconds":  295.0875561737921,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260720133137-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_compact_standalone2.csv"
+}
+[2026-07-20T16:36:36.1127378+03:00] OK run=v2_w00_compact_standalone2 total=295.0875561737921
+[2026-07-20T16:36:36.1603669+03:00] START order=2 run=v2_w00_compact_local4
+[2026-07-20T16:36:36.1921339+03:00] FAILED run=v2_w00_compact_local4 error=Cannot validate argument on parameter 'Scenario'. The argument "local4" does not belong to the set "local8;standalone2" specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again.

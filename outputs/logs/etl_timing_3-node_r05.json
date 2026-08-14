@@ -1,0 +1,22 @@
+{
+  "scenario": "3-node",
+  "run_id": "r05",
+  "spark_master": "spark://spark-master:7077",
+  "input_format": "parquet",
+  "extract_seconds": 340.33708074700553,
+  "transform_seconds": 71.06385238998337,
+  "load_seconds": 28.80010322900489,
+  "total_seconds": 440.2010363659938,
+  "feature_rows": 1180395,
+  "raw_counts": {
+    "admissions": 58976,
+    "patients": 46520,
+    "icustays": 61532,
+    "chartevents": 330712483,
+    "labevents": 22245034
+  },
+  "outputs": {
+    "parquet": "outputs/features/feature_matrix_3node_r05.parquet",
+    "csv_dir": "outputs/features/feature_matrix_3node_r05_csv"
+  }
+}

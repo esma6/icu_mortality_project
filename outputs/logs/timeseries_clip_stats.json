@@ -1,0 +1,8 @@
+{
+  "candidate_measurement_rows": 28794711,
+  "kept_rows": 28652828,
+  "clipped_rows": 141883,
+  "clipped_pct": 0.493,
+  "window_hours": 6,
+  "note": "vital+valuenum+range+charttime filtreli, stay_ref(intime notnull) join sonrasi olcum satirlari; clipped = charttime ICU kalisi disinda"
+}

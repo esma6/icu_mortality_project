@@ -1,0 +1,15 @@
+﻿{
+    "run_id":  "v2_w00_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  264.48948484599896,
+    "transform_seconds":  18.62854290299947,
+    "load_seconds":  3.8496735940025246,
+    "total_seconds":  286.96770134300095,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786296946471",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_compact_local2.csv"
+}

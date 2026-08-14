@@ -1,0 +1,195 @@
+﻿[2026-08-09T20:31:16.7251399+03:00] START order=2 run=v2_w00_compact_local4
+powershell :  Container spark-worker-1 Stopping 
+At line:2 char:1
++ powershell -File .\scripts\run_validation_matrix.ps1 -Repeats 12 -See ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( Container spark-worker-1 Stopping :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ Container spark-worker-2 Stopping 
+ Container spark-worker-2 Stopped 
+ Container spark-worker-1 Stopped 
+ Container spark-master Stopping 
+ Container spark-master Stopped 
+spark-master
+ Container spark-master Starting 
+ Container spark-master Started 
+{
+    "run_id":  "v2_w00_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  220.18482801500068,
+    "transform_seconds":  13.783650944998953,
+    "load_seconds":  4.121306581000681,
+    "total_seconds":  238.0897855410003,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786296693249",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_compact_local4.csv"
+}
+[2026-08-09T20:35:33.8469508+03:00] OK run=v2_w00_compact_local4 total=238.0897855410003
+[2026-08-09T20:35:33.8469508+03:00] START order=3 run=v2_w00_compact_local2
+ Container spark-worker-2 Stopping 
+ Container spark-worker-1 Stopping 
+ Container spark-worker-1 Stopped 
+ Container spark-worker-2 Stopped 
+ Container spark-master Stopping 
+ Container spark-master Stopped 
+spark-master
+ Container spark-master Starting 
+ Container spark-master Started 
+{
+    "run_id":  "v2_w00_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  264.48948484599896,
+    "transform_seconds":  18.62854290299947,
+    "load_seconds":  3.8496735940025246,
+    "total_seconds":  286.96770134300095,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786296946471",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_compact_local2.csv"
+}
+[2026-08-09T20:40:35.9396050+03:00] OK run=v2_w00_compact_local2 total=286.96770134300095
+[2026-08-09T20:40:35.9413463+03:00] START order=4 run=v2_w00_timeseries_local8
+ Container spark-worker-2 Stopping 
+ Container spark-worker-1 Stopping 
+ Container spark-worker-1 Stopped 
+ Container spark-worker-2 Stopped 
+ Container spark-master Stopping 
+ Container spark-master Stopped 
+spark-master
+ Container spark-master Starting 
+ Container spark-master Started 
+{
+    "run_id":  "v2_w00_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  181.62249088300086,
+    "transform_seconds":  24.305237723001483,
+    "load_seconds":  18.856881276999047,
+    "total_seconds":  224.7846098830014,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786297252582",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_timeseries_local8.csv"
+}
+[2026-08-09T20:44:39.8730165+03:00] OK run=v2_w00_timeseries_local8 total=224.7846098830014
+[2026-08-09T20:44:39.8730165+03:00] START order=5 run=v2_w00_compact_standalone1
+ Container spark-worker-1 Stopping 
+ Container spark-worker-2 Stopping 
+ Container spark-worker-1 Stopped 
+ Container spark-worker-2 Stopped 
+ Container spark-master Stopping 
+ Container spark-master Stopped 
+spark-master
+ Container spark-master Starting 
+ Container spark-master Started 
+ Container spark-master Running 
+ Container spark-worker-1 Recreate 
+ Container spark-worker-1 Recreated 
+spark-worker-1
+ Container spark-worker-1 Starting 
+ Container spark-worker-1 Started 
+{
+    "run_id":  "v2_w00_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  232.57477835399914,
+    "transform_seconds":  23.993145410997386,
+    "load_seconds":  3.798962829001539,
+    "total_seconds":  260.36688659399806,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809174458-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_compact_standalone1.csv"
+}
+[2026-08-09T20:49:22.4483773+03:00] OK run=v2_w00_compact_standalone1 total=260.36688659399806
+[2026-08-09T20:49:22.4483773+03:00] START order=6 run=v2_w00_timeseries_local4
+ Container spark-worker-1 Stopping 
+ Container spark-worker-2 Stopping 
+ Container spark-worker-2 Stopped 
+ Container spark-worker-1 Stopped 
+ Container spark-master Stopping 
+ Container spark-master Stopped 
+spark-master
+ Container spark-master Starting 
+ Container spark-master Started 
+{
+    "run_id":  "v2_w00_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  219.15836184599902,
+    "transform_seconds":  25.158337950000714,
+    "load_seconds":  17.66520170000149,
+    "total_seconds":  261.9819014960012,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786297781160",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_timeseries_local4.csv"
+}
+[2026-08-09T20:54:05.1501288+03:00] OK run=v2_w00_timeseries_local4 total=261.9819014960012
+[2026-08-09T20:54:05.1532674+03:00] START order=7 run=v2_w00_timeseries_standalone2
+ Container spark-worker-2 Stopping 
+ Container spark-worker-1 Stopping 
+ Container spark-worker-1 Stopped 
+ Container spark-worker-2 Stopped 
+ Container spark-master Stopping 
+ Container spark-master Stopped 
+spark-master
+ Container spark-master Starting 
+ Container spark-master Started 
+ Container spark-master Running 
+ Container spark-worker-2 Recreate 
+ Container spark-worker-1 Recreate 
+ Container spark-worker-1 Recreated 
+ Container spark-worker-2 Recreated 
+spark-worker-1
+spark-worker-2
+ Container spark-worker-2 Starting 
+ Container spark-worker-1 Starting 
+ Container spark-worker-1 Started 
+ Container spark-worker-2 Started 
+{
+    "run_id":  "v2_w00_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  236.54852922400096,
+    "transform_seconds":  40.317928820000816,
+    "load_seconds":  19.959758351000346,
+    "total_seconds":  296.8262163950021,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809175423-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_timeseries_standalone2.csv"
+}
+[2026-08-09T20:59:23.1639689+03:00] OK run=v2_w00_timeseries_standalone2 total=296.8262163950021
+[2026-08-09T20:59:23.1665919+03:00] START order=8 run=v2_w00_timeseries_standalone1
+ Container spark-worker-2 Stopping 
+ Container spark-worker-1 Stopping 
+ Container spark-worker-1 Stopped 
+ Container spark-worker-2 Stopped 
+ Container spark-master Stopping 
+ Container spark-master Stopped 
+spark-master
+ Container spark-master Starting 
+ Container spark-master Started 
+ Container spark-master Running 
+ Container spark-worker-1 Recreate 
+ Container spark-worker-1 Recreated 
+spark-worker-1
+ Container spark-worker-1 Starting 
+ Container spark-worker-1 Started 

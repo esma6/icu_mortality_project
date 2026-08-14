@@ -1,0 +1,22 @@
+{
+  "scenario": "1-node",
+  "run_id": "probe1",
+  "spark_master": "local[2]",
+  "input_format": "parquet",
+  "extract_seconds": 506.57686305302195,
+  "transform_seconds": 151.84954719099915,
+  "load_seconds": 16.19244538201019,
+  "total_seconds": 674.6188556260313,
+  "feature_rows": 58976,
+  "raw_counts": {
+    "admissions": 58976,
+    "patients": 46520,
+    "icustays": 61532,
+    "chartevents": 330712483,
+    "labevents": 22245034
+  },
+  "outputs": {
+    "parquet": "outputs/features/feature_matrix_probe1.parquet",
+    "csv_dir": "outputs/features/feature_matrix_probe1_csv"
+  }
+}

@@ -1,0 +1,65 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Editor/agent tooling and stray local artifacts (not part of the pipeline)
+.claude/
+.agents/
+/cd
+/type
+scripts/_new.py
+
+# Raw MIMIC-III data. Controlled-access, de-identified data under a PhysioNet
+# Data Use Agreement that prohibits redistribution. Never commit this.
+data/
+
+# Patient-level derived feature matrices (compact/timeseries/wide/early_window,
+# and the same for the validation experiment). These are row-per-admission or
+# row-per-window MIMIC-III derivatives and fall under the same DUA restriction
+# as the raw data above. Only aggregate/summary outputs are tracked.
+outputs/features/
+outputs/validation/features/
+
+# Spark event logs from the randomized validation series (~400+ MB). Not
+# needed to reproduce the reported numbers -- the aggregate metrics extracted
+# from them are already in outputs/validation/analysis/.
+outputs/validation/spark-events/
+
+# Backup/scratch artifacts from earlier pipeline iterations, kept locally for
+# our own history but not part of the citable reproducibility package.
+outputs/tables/compact_backup/
+outputs/tables/timeseries_backup/
+outputs/tables/etl_timing_runs_KIRLI_OLD.csv
+outputs/tables_csvgz_backup/
+outputs/logs/compact_backup/
+outputs/logs.zip
+
+# Superseded pre-leakage-fix ML outputs. See outputs/tables_ml_leakfree/ and
+# outputs/figures_ml_leakfree/ for the corrected, patient-grouped, leak-free
+# results actually reported in the manuscript (Sections 3.7/4.6).
+outputs/tables/class_balance.csv
+outputs/tables/cv_metrics_by_fold.csv
+outputs/tables/cv_metrics_summary.csv
+outputs/tables/holdout_metrics_by_seed.csv
+outputs/tables/holdout_metrics_summary.csv
+outputs/tables/missingness_report.csv
+outputs/tables/random_forest_feature_importance.csv
+outputs/figures/figure_5_roc_pr_curves.png
+outputs/figures/figure_6_model_metrics.png
+outputs/figures/figure_7_feature_importance.png
+
+# Only the current manuscript draft is public; superseded drafts and internal
+# review-process documents stay local.
+paper_revision/MIMICIII_Spark_ETL_Makale_Hakem_Revizyonlu_v7.docx
+paper_revision/MIMICIII_Spark_ETL_Makale_Literatur_Temelli_v8.docx
+paper_revision/MIMICIII_Spark_ETL_Makale_Literatur_Temelli_v8_final.docx
+paper_revision/MIMICIII_Spark_ETL_Makale_Literatur_Temelli_v9.docx
+paper_revision/MIMICIII_Spark_ETL_Makale_Nihai_Taslak_v6.docx
+paper_revision/DOGRULAMA_DENEY_PROTOKOLU_v2.md
+paper_revision/HAKEM_DEGERLENDIRME_RAPORU_v7.md
+paper_revision/LITERATUR_KARSILASTIRMA_MATRISI_2020_2026.md
+paper_revision/LITERATUR_TARAMA_PROTOKOLU_2020_2026.md
+paper_revision/REVIZYON_VE_KANIT_NOTLARI.md
+
+.DS_Store

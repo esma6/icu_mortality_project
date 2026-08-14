@@ -1,0 +1,2288 @@
+[2026-08-09T21:10:03.8631165+03:00] START order=8 run=v2_w00_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_w00_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  230.8273781309981,
+    "transform_seconds":  38.9196136770006,
+    "load_seconds":  22.346511283001746,
+    "total_seconds":  292.09350309100046,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809181016-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_timeseries_standalone1.csv"
+}
+[2026-08-09T21:15:11.0461068+03:00] OK run=v2_w00_timeseries_standalone1 total=292.09350309100046
+[2026-08-09T21:15:11.0461068+03:00] START order=9 run=v2_w00_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_w00_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  285.08186674100216,
+    "transform_seconds":  28.67448704799972,
+    "load_seconds":  18.65228166900124,
+    "total_seconds":  332.4086354580031,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786299323899",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_timeseries_local2.csv"
+}
+[2026-08-09T21:20:58.6575668+03:00] OK run=v2_w00_timeseries_local2 total=332.4086354580031
+[2026-08-09T21:20:58.6575668+03:00] START order=10 run=v2_w00_compact_local8
+spark-master
+{
+    "run_id":  "v2_w00_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  207.05831677600145,
+    "transform_seconds":  13.010449338999024,
+    "load_seconds":  3.393736001002253,
+    "total_seconds":  223.46250211600272,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786299671773",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_w00_compact_local8.csv"
+}
+[2026-08-09T21:24:57.4920132+03:00] OK run=v2_w00_compact_local8 total=223.46250211600272
+[2026-08-09T21:24:57.4920132+03:00] START order=11 run=v2_m01_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m01_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  235.49071353800173,
+    "transform_seconds":  40.74808951199884,
+    "load_seconds":  21.13773297499938,
+    "total_seconds":  297.37653602499995,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809182515-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_timeseries_standalone2.csv"
+}
+[2026-08-09T21:30:16.2088158+03:00] OK run=v2_m01_timeseries_standalone2 total=297.37653602499995
+[2026-08-09T21:30:16.2127847+03:00] START order=12 run=v2_m01_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m01_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  227.029704882003,
+    "transform_seconds":  25.431126250998204,
+    "load_seconds":  3.6189568390000204,
+    "total_seconds":  256.0797879720012,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809183037-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_compact_standalone2.csv"
+}
+[2026-08-09T21:34:57.9229938+03:00] OK run=v2_m01_compact_standalone2 total=256.0797879720012
+[2026-08-09T21:34:57.9392997+03:00] START order=13 run=v2_m01_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m01_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  234.10667883399947,
+    "transform_seconds":  40.323726567999984,
+    "load_seconds":  21.740183706002426,
+    "total_seconds":  296.1705891080019,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809183516-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_timeseries_standalone1.csv"
+}
+[2026-08-09T21:40:16.6344840+03:00] OK run=v2_m01_timeseries_standalone1 total=296.1705891080019
+[2026-08-09T21:40:16.6344840+03:00] START order=14 run=v2_m01_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m01_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  231.71093883100184,
+    "transform_seconds":  24.848455781000666,
+    "load_seconds":  18.082113361000665,
+    "total_seconds":  274.6415079730032,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786300834548",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_timeseries_local4.csv"
+}
+[2026-08-09T21:45:11.7414993+03:00] OK run=v2_m01_timeseries_local4 total=274.6415079730032
+[2026-08-09T21:45:11.7414993+03:00] START order=15 run=v2_m01_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m01_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  294.93395168799907,
+    "transform_seconds":  28.713818685999286,
+    "load_seconds":  19.07154118699691,
+    "total_seconds":  342.71931156099527,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786301124899",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_timeseries_local2.csv"
+}
+[2026-08-09T21:51:09.9372036+03:00] OK run=v2_m01_timeseries_local2 total=342.71931156099527
+[2026-08-09T21:51:09.9528620+03:00] START order=16 run=v2_m01_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m01_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  197.4033215899981,
+    "transform_seconds":  26.864505374000146,
+    "load_seconds":  25.14339158399889,
+    "total_seconds":  249.41121854799712,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786301483290",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_timeseries_local8.csv"
+}
+[2026-08-09T21:55:35.0804122+03:00] OK run=v2_m01_timeseries_local8 total=249.41121854799712
+[2026-08-09T21:55:35.0827161+03:00] START order=17 run=v2_m01_compact_local2
+spark-master
+{
+    "run_id":  "v2_m01_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  291.66807546699783,
+    "transform_seconds":  19.235473175998777,
+    "load_seconds":  4.138069332999294,
+    "total_seconds":  315.0416179759959,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786301748448",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_compact_local2.csv"
+}
+[2026-08-09T22:01:06.3722458+03:00] OK run=v2_m01_compact_local2 total=315.0416179759959
+[2026-08-09T22:01:06.3848082+03:00] START order=18 run=v2_m01_compact_local8
+spark-master
+{
+    "run_id":  "v2_m01_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  193.03068255999824,
+    "transform_seconds":  13.01719014000264,
+    "load_seconds":  3.6521975960022246,
+    "total_seconds":  209.7000702960031,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786302078771",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_compact_local8.csv"
+}
+[2026-08-09T22:04:50.6457642+03:00] OK run=v2_m01_compact_local8 total=209.7000702960031
+[2026-08-09T22:04:50.6461541+03:00] START order=19 run=v2_m01_compact_local4
+spark-master
+{
+    "run_id":  "v2_m01_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  235.32371983800113,
+    "transform_seconds":  14.834815005000564,
+    "load_seconds":  3.7265715280009317,
+    "total_seconds":  253.88510637100262,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786302303620",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_compact_local4.csv"
+}
+[2026-08-09T22:09:19.3993025+03:00] OK run=v2_m01_compact_local4 total=253.88510637100262
+[2026-08-09T22:09:19.3993025+03:00] START order=20 run=v2_m01_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m01_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  220.02503688900106,
+    "transform_seconds":  23.95038978299999,
+    "load_seconds":  4.231782306000241,
+    "total_seconds":  248.2072089780013,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809190937-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m01_compact_standalone1.csv"
+}
+[2026-08-09T22:13:48.5994514+03:00] OK run=v2_m01_compact_standalone1 total=248.2072089780013
+[2026-08-09T22:13:48.5994514+03:00] START order=21 run=v2_m02_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m02_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  215.62665020699933,
+    "transform_seconds":  24.241660839998076,
+    "load_seconds":  4.0435556459997315,
+    "total_seconds":  243.91186669299714,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809191407-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_compact_standalone1.csv"
+}
+[2026-08-09T22:18:14.6246983+03:00] OK run=v2_m02_compact_standalone1 total=243.91186669299714
+[2026-08-09T22:18:14.6246983+03:00] START order=22 run=v2_m02_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m02_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  194.4137630439982,
+    "transform_seconds":  22.715896425997926,
+    "load_seconds":  17.48313049299759,
+    "total_seconds":  234.6127899629937,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786303107058",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_timeseries_local8.csv"
+}
+[2026-08-09T22:22:24.0833208+03:00] OK run=v2_m02_timeseries_local8 total=234.6127899629937
+[2026-08-09T22:22:24.0850573+03:00] START order=23 run=v2_m02_compact_local4
+spark-master
+{
+    "run_id":  "v2_m02_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  214.4241500600001,
+    "transform_seconds":  13.161222202998033,
+    "load_seconds":  3.510342501998821,
+    "total_seconds":  231.09571476499696,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786303356070",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_compact_local4.csv"
+}
+[2026-08-09T22:26:29.7294834+03:00] OK run=v2_m02_compact_local4 total=231.09571476499696
+[2026-08-09T22:26:29.7312232+03:00] START order=24 run=v2_m02_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m02_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  216.46492688199942,
+    "transform_seconds":  38.721565736999764,
+    "load_seconds":  20.052502337999613,
+    "total_seconds":  275.2389949569988,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809192646-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_timeseries_standalone1.csv"
+}
+[2026-08-09T22:31:24.7320816+03:00] OK run=v2_m02_timeseries_standalone1 total=275.2389949569988
+[2026-08-09T22:31:24.7339901+03:00] START order=25 run=v2_m02_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m02_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  267.41785955399973,
+    "transform_seconds":  27.161816782998358,
+    "load_seconds":  19.770666627002356,
+    "total_seconds":  314.35034296400045,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786303898430",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_timeseries_local2.csv"
+}
+[2026-08-09T22:36:55.0312870+03:00] OK run=v2_m02_timeseries_local2 total=314.35034296400045
+[2026-08-09T22:36:55.0346528+03:00] START order=26 run=v2_m02_compact_local2
+spark-master
+{
+    "run_id":  "v2_m02_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  275.4948605560021,
+    "transform_seconds":  19.215659920999315,
+    "load_seconds":  4.461219430002529,
+    "total_seconds":  299.17173990700394,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786304231963",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_compact_local2.csv"
+}
+[2026-08-09T22:42:14.0315344+03:00] OK run=v2_m02_compact_local2 total=299.17173990700394
+[2026-08-09T22:42:14.0335600+03:00] START order=27 run=v2_m02_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m02_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  222.89325510699928,
+    "transform_seconds":  39.30990660700263,
+    "load_seconds":  20.240042813999025,
+    "total_seconds":  282.44320452800093,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809194235-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_timeseries_standalone2.csv"
+}
+[2026-08-09T22:47:22.1392002+03:00] OK run=v2_m02_timeseries_standalone2 total=282.44320452800093
+[2026-08-09T22:47:22.1392002+03:00] START order=28 run=v2_m02_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m02_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  258.6295046720006,
+    "transform_seconds":  26.118020122001326,
+    "load_seconds":  18.01612806799676,
+    "total_seconds":  302.7636528619987,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786304858284",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_timeseries_local4.csv"
+}
+[2026-08-09T22:52:43.1247514+03:00] OK run=v2_m02_timeseries_local4 total=302.7636528619987
+[2026-08-09T22:52:43.1247514+03:00] START order=29 run=v2_m02_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m02_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  239.25401653599693,
+    "transform_seconds":  24.400933037999494,
+    "load_seconds":  3.952740377997543,
+    "total_seconds":  267.60768995199396,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809195310-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_compact_standalone2.csv"
+}
+[2026-08-09T22:57:42.3320250+03:00] OK run=v2_m02_compact_standalone2 total=267.60768995199396
+[2026-08-09T22:57:42.3320250+03:00] START order=30 run=v2_m02_compact_local8
+spark-master
+{
+    "run_id":  "v2_m02_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  209.46537785100008,
+    "transform_seconds":  13.996619863999513,
+    "load_seconds":  3.5321830220018455,
+    "total_seconds":  226.99418073700144,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786305475875",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m02_compact_local8.csv"
+}
+[2026-08-09T23:01:45.2446689+03:00] OK run=v2_m02_compact_local8 total=226.99418073700144
+[2026-08-09T23:01:45.2605809+03:00] START order=31 run=v2_m03_compact_local4
+spark-master
+{
+    "run_id":  "v2_m03_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  225.65549120200012,
+    "transform_seconds":  14.123499400000583,
+    "load_seconds":  3.879884948997642,
+    "total_seconds":  243.65887555099835,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786305717125",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_compact_local4.csv"
+}
+[2026-08-09T23:06:03.4877819+03:00] OK run=v2_m03_compact_local4 total=243.65887555099835
+[2026-08-09T23:06:03.4979621+03:00] START order=32 run=v2_m03_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m03_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  229.55331646200284,
+    "transform_seconds":  39.07831074299975,
+    "load_seconds":  22.573680492998392,
+    "total_seconds":  291.205307698001,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809200620-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_timeseries_standalone1.csv"
+}
+[2026-08-09T23:11:15.1134337+03:00] OK run=v2_m03_timeseries_standalone1 total=291.205307698001
+[2026-08-09T23:11:15.1203941+03:00] START order=33 run=v2_m03_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m03_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  225.69316651499685,
+    "transform_seconds":  23.904814543999237,
+    "load_seconds":  19.968335597000987,
+    "total_seconds":  269.56631665599707,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786306292409",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_timeseries_local4.csv"
+}
+[2026-08-09T23:16:04.5996814+03:00] OK run=v2_m03_timeseries_local4 total=269.56631665599707
+[2026-08-09T23:16:04.5996814+03:00] START order=34 run=v2_m03_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m03_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  231.24662367400015,
+    "transform_seconds":  24.643861943000957,
+    "load_seconds":  4.046033791000809,
+    "total_seconds":  259.9365194080019,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809201623-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_compact_standalone2.csv"
+}
+[2026-08-09T23:20:47.7214206+03:00] OK run=v2_m03_compact_standalone2 total=259.9365194080019
+[2026-08-09T23:20:47.7250037+03:00] START order=35 run=v2_m03_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m03_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  293.7433758949992,
+    "transform_seconds":  28.777085386002,
+    "load_seconds":  18.961084734000906,
+    "total_seconds":  341.4815460150021,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786306861516",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_timeseries_local2.csv"
+}
+[2026-08-09T23:26:45.3767145+03:00] OK run=v2_m03_timeseries_local2 total=341.4815460150021
+[2026-08-09T23:26:45.3777187+03:00] START order=36 run=v2_m03_compact_local8
+spark-master
+{
+    "run_id":  "v2_m03_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  195.3867785479997,
+    "transform_seconds":  13.301196405001974,
+    "load_seconds":  3.6221065600002476,
+    "total_seconds":  212.31008151300193,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786307217463",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_compact_local8.csv"
+}
+[2026-08-09T23:30:31.7986645+03:00] OK run=v2_m03_compact_local8 total=212.31008151300193
+[2026-08-09T23:30:31.7986645+03:00] START order=37 run=v2_m03_compact_local2
+spark-master
+{
+    "run_id":  "v2_m03_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  278.1899636820017,
+    "transform_seconds":  19.563043123998796,
+    "load_seconds":  4.343703466001898,
+    "total_seconds":  302.0967102720024,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786307443500",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_compact_local2.csv"
+}
+[2026-08-09T23:35:48.2519508+03:00] OK run=v2_m03_compact_local2 total=302.0967102720024
+[2026-08-09T23:35:48.2519508+03:00] START order=38 run=v2_m03_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m03_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  190.58951027999865,
+    "transform_seconds":  23.088206575001095,
+    "load_seconds":  19.1671651559991,
+    "total_seconds":  232.84488201099884,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786307760475",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_timeseries_local8.csv"
+}
+[2026-08-09T23:39:55.8871967+03:00] OK run=v2_m03_timeseries_local8 total=232.84488201099884
+[2026-08-09T23:39:55.8871967+03:00] START order=39 run=v2_m03_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m03_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  234.71745699500025,
+    "transform_seconds":  23.25553417899937,
+    "load_seconds":  3.8767302689993812,
+    "total_seconds":  261.849721442999,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809204013-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_compact_standalone1.csv"
+}
+[2026-08-09T23:44:38.8965413+03:00] OK run=v2_m03_compact_standalone1 total=261.849721442999
+[2026-08-09T23:44:38.8965413+03:00] START order=40 run=v2_m03_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m03_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  218.17084689900003,
+    "transform_seconds":  40.21032887599722,
+    "load_seconds":  21.013834700999723,
+    "total_seconds":  279.39501047599697,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809204457-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m03_timeseries_standalone2.csv"
+}
+[2026-08-09T23:49:40.8898771+03:00] OK run=v2_m03_timeseries_standalone2 total=279.39501047599697
+[2026-08-09T23:49:40.9057692+03:00] START order=41 run=v2_m04_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m04_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  233.10609676899912,
+    "transform_seconds":  23.32092172099874,
+    "load_seconds":  4.495093007000833,
+    "total_seconds":  260.9221114969987,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809205002-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_compact_standalone1.csv"
+}
+[2026-08-09T23:54:26.7256355+03:00] OK run=v2_m04_compact_standalone1 total=260.9221114969987
+[2026-08-09T23:54:26.7390901+03:00] START order=42 run=v2_m04_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m04_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  192.6358199230017,
+    "transform_seconds":  22.71573724300106,
+    "load_seconds":  17.65836155999932,
+    "total_seconds":  233.00991872600207,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786308880383",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_timeseries_local8.csv"
+}
+[2026-08-09T23:58:35.7652991+03:00] OK run=v2_m04_timeseries_local8 total=233.00991872600207
+[2026-08-09T23:58:35.7669390+03:00] START order=43 run=v2_m04_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m04_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  215.12877265399948,
+    "transform_seconds":  22.36482905900266,
+    "load_seconds":  17.505057354999735,
+    "total_seconds":  254.99865906800187,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786309127789",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_timeseries_local4.csv"
+}
+[2026-08-10T00:03:04.9188296+03:00] OK run=v2_m04_timeseries_local4 total=254.99865906800187
+[2026-08-10T00:03:04.9205693+03:00] START order=44 run=v2_m04_compact_local2
+spark-master
+{
+    "run_id":  "v2_m04_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  269.2127168830011,
+    "transform_seconds":  17.44762108800205,
+    "load_seconds":  4.139866409001115,
+    "total_seconds":  290.8002043800043,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786309396734",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_compact_local2.csv"
+}
+[2026-08-10T00:08:09.9615182+03:00] OK run=v2_m04_compact_local2 total=290.8002043800043
+[2026-08-10T00:08:09.9741436+03:00] START order=45 run=v2_m04_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m04_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  263.57574001399917,
+    "transform_seconds":  29.185460656997748,
+    "load_seconds":  18.26542908999545,
+    "total_seconds":  311.02662976099236,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786309701121",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_timeseries_local2.csv"
+}
+[2026-08-10T00:13:34.0448554+03:00] OK run=v2_m04_timeseries_local2 total=311.02662976099236
+[2026-08-10T00:13:34.0448554+03:00] START order=46 run=v2_m04_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m04_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  220.31072622400097,
+    "transform_seconds":  24.732688117997895,
+    "load_seconds":  3.878783972999372,
+    "total_seconds":  248.92219831499824,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809211352-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_compact_standalone2.csv"
+}
+[2026-08-10T00:18:04.0151406+03:00] OK run=v2_m04_compact_standalone2 total=248.92219831499824
+[2026-08-10T00:18:04.0173506+03:00] START order=47 run=v2_m04_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m04_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  212.77890971799934,
+    "transform_seconds":  38.038804323994555,
+    "load_seconds":  19.81463859199721,
+    "total_seconds":  270.6323526339911,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809211821-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_timeseries_standalone1.csv"
+}
+[2026-08-10T00:22:55.9492176+03:00] OK run=v2_m04_timeseries_standalone1 total=270.6323526339911
+[2026-08-10T00:22:55.9492176+03:00] START order=48 run=v2_m04_compact_local4
+spark-master
+{
+    "run_id":  "v2_m04_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  229.79567050300102,
+    "transform_seconds":  14.957326370000374,
+    "load_seconds":  3.5865224520021,
+    "total_seconds":  248.3395193250035,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786310588245",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_compact_local4.csv"
+}
+[2026-08-10T00:27:18.5003168+03:00] OK run=v2_m04_compact_local4 total=248.3395193250035
+[2026-08-10T00:27:18.5003168+03:00] START order=49 run=v2_m04_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m04_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  209.72080979100429,
+    "transform_seconds":  39.864708698005415,
+    "load_seconds":  18.65266240600613,
+    "total_seconds":  268.23818089501583,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809212736-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_timeseries_standalone2.csv"
+}
+[2026-08-10T00:32:07.4258423+03:00] OK run=v2_m04_timeseries_standalone2 total=268.23818089501583
+[2026-08-10T00:32:07.4258423+03:00] START order=50 run=v2_m04_compact_local8
+spark-master
+{
+    "run_id":  "v2_m04_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  198.43184828200174,
+    "transform_seconds":  12.59880798299855,
+    "load_seconds":  3.4259563619998517,
+    "total_seconds":  214.45661262700014,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786311140070",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m04_compact_local8.csv"
+}
+[2026-08-10T00:35:56.6471404+03:00] OK run=v2_m04_compact_local8 total=214.45661262700014
+[2026-08-10T00:35:56.6533623+03:00] START order=51 run=v2_m05_compact_local4
+spark-master
+{
+    "run_id":  "v2_m05_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  208.72075739299908,
+    "transform_seconds":  13.705130611997447,
+    "load_seconds":  3.3953573610051535,
+    "total_seconds":  225.82124536600168,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786311367918",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_compact_local4.csv"
+}
+[2026-08-10T00:39:56.1833153+03:00] OK run=v2_m05_compact_local4 total=225.82124536600168
+[2026-08-10T00:39:56.1848178+03:00] START order=52 run=v2_m05_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m05_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  193.01770658700116,
+    "transform_seconds":  22.69993236799928,
+    "load_seconds":  17.744390138002927,
+    "total_seconds":  233.46202909300337,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786311607446",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_timeseries_local8.csv"
+}
+[2026-08-10T00:44:03.0033668+03:00] OK run=v2_m05_timeseries_local8 total=233.46202909300337
+[2026-08-10T00:44:03.0033668+03:00] START order=53 run=v2_m05_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m05_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  214.80128870299814,
+    "transform_seconds":  38.63461686899973,
+    "load_seconds":  18.260547812002187,
+    "total_seconds":  271.69645338400005,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809214420-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_timeseries_standalone2.csv"
+}
+[2026-08-10T00:48:54.8004551+03:00] OK run=v2_m05_timeseries_standalone2 total=271.69645338400005
+[2026-08-10T00:48:54.8021768+03:00] START order=54 run=v2_m05_compact_local2
+spark-master
+{
+    "run_id":  "v2_m05_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  275.89560013900336,
+    "transform_seconds":  18.844382190000033,
+    "load_seconds":  3.369723746996897,
+    "total_seconds":  298.1097060760003,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786312147619",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_compact_local2.csv"
+}
+[2026-08-10T00:54:07.8938980+03:00] OK run=v2_m05_compact_local2 total=298.1097060760003
+[2026-08-10T00:54:07.8970969+03:00] START order=55 run=v2_m05_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m05_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  216.36052534700138,
+    "transform_seconds":  22.81414437100466,
+    "load_seconds":  3.8659667979954975,
+    "total_seconds":  243.04063651600154,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809215425-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_compact_standalone2.csv"
+}
+[2026-08-10T00:58:32.2887052+03:00] OK run=v2_m05_compact_standalone2 total=243.04063651600154
+[2026-08-10T00:58:32.2921613+03:00] START order=56 run=v2_m05_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m05_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  215.7289760720014,
+    "transform_seconds":  23.559222210998996,
+    "load_seconds":  17.0890985609949,
+    "total_seconds":  256.3772968439953,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786312725133",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_timeseries_local4.csv"
+}
+[2026-08-10T01:03:04.4737085+03:00] OK run=v2_m05_timeseries_local4 total=256.3772968439953
+[2026-08-10T01:03:04.4754470+03:00] START order=57 run=v2_m05_compact_local8
+spark-master
+{
+    "run_id":  "v2_m05_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  185.7026989579972,
+    "transform_seconds":  12.538379071993404,
+    "load_seconds":  3.4596920589974616,
+    "total_seconds":  201.70077008898807,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786312996547",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_compact_local8.csv"
+}
+[2026-08-10T01:06:40.4673523+03:00] OK run=v2_m05_compact_local8 total=201.70077008898807
+[2026-08-10T01:06:40.4691099+03:00] START order=58 run=v2_m05_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m05_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  226.16201716900105,
+    "transform_seconds":  39.55522565299907,
+    "load_seconds":  21.408206303000043,
+    "total_seconds":  287.12544912500016,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809220657-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_timeseries_standalone1.csv"
+}
+[2026-08-10T01:11:47.7926496+03:00] OK run=v2_m05_timeseries_standalone1 total=287.12544912500016
+[2026-08-10T01:11:47.8087561+03:00] START order=59 run=v2_m05_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m05_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  224.36482469099428,
+    "transform_seconds":  22.864142561003973,
+    "load_seconds":  3.923682338994695,
+    "total_seconds":  251.15264959099295,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809221205-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_compact_standalone1.csv"
+}
+[2026-08-10T01:16:19.5379463+03:00] OK run=v2_m05_compact_standalone1 total=251.15264959099295
+[2026-08-10T01:16:19.5379463+03:00] START order=60 run=v2_m05_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m05_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  277.09737295800005,
+    "transform_seconds":  28.3520674600004,
+    "load_seconds":  17.95723756100051,
+    "total_seconds":  323.40667797900096,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786313792251",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m05_timeseries_local2.csv"
+}
+[2026-08-10T01:21:57.4593850+03:00] OK run=v2_m05_timeseries_local2 total=323.40667797900096
+[2026-08-10T01:21:57.4593850+03:00] START order=61 run=v2_m06_compact_local4
+spark-master
+{
+    "run_id":  "v2_m06_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  210.43714095200266,
+    "transform_seconds":  13.863141777997953,
+    "load_seconds":  4.855728836999333,
+    "total_seconds":  229.15601156699995,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786314128831",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_compact_local4.csv"
+}
+[2026-08-10T01:25:59.9888228+03:00] OK run=v2_m06_compact_local4 total=229.15601156699995
+[2026-08-10T01:25:59.9903917+03:00] START order=62 run=v2_m06_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m06_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  211.83953397499863,
+    "transform_seconds":  38.65337918300065,
+    "load_seconds":  20.754793318003067,
+    "total_seconds":  271.24770647600235,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809222617-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_timeseries_standalone2.csv"
+}
+[2026-08-10T01:30:52.7555141+03:00] OK run=v2_m06_timeseries_standalone2 total=271.24770647600235
+[2026-08-10T01:30:52.7555141+03:00] START order=63 run=v2_m06_compact_local2
+spark-master
+{
+    "run_id":  "v2_m06_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  285.31385602799855,
+    "transform_seconds":  17.929851495995536,
+    "load_seconds":  3.640786436997587,
+    "total_seconds":  306.8844939609917,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786314665853",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_compact_local2.csv"
+}
+[2026-08-10T01:36:15.0077090+03:00] OK run=v2_m06_compact_local2 total=306.8844939609917
+[2026-08-10T01:36:15.0077090+03:00] START order=64 run=v2_m06_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m06_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  197.60142970400193,
+    "transform_seconds":  23.579590606997954,
+    "load_seconds":  18.518260068005475,
+    "total_seconds":  239.69928037900536,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786314986492",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_timeseries_local8.csv"
+}
+[2026-08-10T01:40:28.8800165+03:00] OK run=v2_m06_timeseries_local8 total=239.69928037900536
+[2026-08-10T01:40:28.8800165+03:00] START order=65 run=v2_m06_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m06_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  219.95303556400177,
+    "transform_seconds":  23.168628405001073,
+    "load_seconds":  3.8372575219982537,
+    "total_seconds":  246.9589214910011,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809224048-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_compact_standalone1.csv"
+}
+[2026-08-10T01:44:57.9596135+03:00] OK run=v2_m06_compact_standalone1 total=246.9589214910011
+[2026-08-10T01:44:57.9596135+03:00] START order=66 run=v2_m06_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m06_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  219.00639104199945,
+    "transform_seconds":  23.038396736999857,
+    "load_seconds":  4.112936047997209,
+    "total_seconds":  246.15772382699652,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809224516-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_compact_standalone2.csv"
+}
+[2026-08-10T01:49:25.8193717+03:00] OK run=v2_m06_compact_standalone2 total=246.15772382699652
+[2026-08-10T01:49:25.8211098+03:00] START order=67 run=v2_m06_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m06_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  216.0375717479983,
+    "transform_seconds":  24.02175713899487,
+    "load_seconds":  17.9103087869953,
+    "total_seconds":  257.9696376739885,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786315779405",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_timeseries_local4.csv"
+}
+[2026-08-10T01:54:00.2494689+03:00] OK run=v2_m06_timeseries_local4 total=257.9696376739885
+[2026-08-10T01:54:00.2494689+03:00] START order=68 run=v2_m06_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m06_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  226.76870214500377,
+    "transform_seconds":  37.585269709001295,
+    "load_seconds":  21.016945859999396,
+    "total_seconds":  285.37091771400446,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809225420-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_timeseries_standalone1.csv"
+}
+[2026-08-10T01:59:09.6610399+03:00] OK run=v2_m06_timeseries_standalone1 total=285.37091771400446
+[2026-08-10T01:59:09.6610399+03:00] START order=69 run=v2_m06_compact_local8
+spark-master
+{
+    "run_id":  "v2_m06_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  178.47785375700187,
+    "transform_seconds":  13.013627064996399,
+    "load_seconds":  3.243075338003109,
+    "total_seconds":  194.73455616000138,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786316362253",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_compact_local8.csv"
+}
+[2026-08-10T02:02:39.2856638+03:00] OK run=v2_m06_compact_local8 total=194.73455616000138
+[2026-08-10T02:02:39.2874036+03:00] START order=70 run=v2_m06_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m06_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  249.48223791400233,
+    "transform_seconds":  29.08383460099867,
+    "load_seconds":  22.218457009003032,
+    "total_seconds":  300.78452952400403,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786316570552",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m06_timeseries_local2.csv"
+}
+[2026-08-10T02:07:53.1895728+03:00] OK run=v2_m06_timeseries_local2 total=300.78452952400403
+[2026-08-10T02:07:53.1895728+03:00] START order=71 run=v2_m07_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m07_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  217.5616877939974,
+    "transform_seconds":  21.334619746005046,
+    "load_seconds":  3.736864305996278,
+    "total_seconds":  242.63317184599873,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809230811-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_compact_standalone2.csv"
+}
+[2026-08-10T02:12:18.0704999+03:00] OK run=v2_m07_compact_standalone2 total=242.63317184599873
+[2026-08-10T02:12:18.0704999+03:00] START order=72 run=v2_m07_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m07_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  212.43311333900056,
+    "transform_seconds":  37.62726634599676,
+    "load_seconds":  20.058151215998805,
+    "total_seconds":  270.1185309009961,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809231236-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_timeseries_standalone1.csv"
+}
+[2026-08-10T02:17:08.9584557+03:00] OK run=v2_m07_timeseries_standalone1 total=270.1185309009961
+[2026-08-10T02:17:08.9601953+03:00] START order=73 run=v2_m07_compact_local4
+spark-master
+{
+    "run_id":  "v2_m07_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  220.15375158700044,
+    "transform_seconds":  16.523648524998862,
+    "load_seconds":  4.245918114997039,
+    "total_seconds":  240.92331822699634,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786317442264",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_compact_local4.csv"
+}
+[2026-08-10T02:21:25.8216898+03:00] OK run=v2_m07_compact_local4 total=240.92331822699634
+[2026-08-10T02:21:25.8216898+03:00] START order=74 run=v2_m07_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m07_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  249.47704494600475,
+    "transform_seconds":  44.02790760999778,
+    "load_seconds":  19.943006746994797,
+    "total_seconds":  313.44795930299733,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809232143-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_timeseries_standalone2.csv"
+}
+[2026-08-10T02:27:01.1625559+03:00] OK run=v2_m07_timeseries_standalone2 total=313.44795930299733
+[2026-08-10T02:27:01.1625559+03:00] START order=75 run=v2_m07_compact_local8
+spark-master
+{
+    "run_id":  "v2_m07_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  191.7598632310037,
+    "transform_seconds":  12.758970979004516,
+    "load_seconds":  3.4085365690043545,
+    "total_seconds":  207.92737077901256,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786318035119",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_compact_local8.csv"
+}
+[2026-08-10T02:30:45.6132123+03:00] OK run=v2_m07_compact_local8 total=207.92737077901256
+[2026-08-10T02:30:45.6147179+03:00] START order=76 run=v2_m07_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m07_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  215.93570111400186,
+    "transform_seconds":  22.56044047100295,
+    "load_seconds":  3.881889552998473,
+    "total_seconds":  242.37803113800328,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809233103-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_compact_standalone1.csv"
+}
+[2026-08-10T02:35:08.7796450+03:00] OK run=v2_m07_compact_standalone1 total=242.37803113800328
+[2026-08-10T02:35:08.7849134+03:00] START order=77 run=v2_m07_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m07_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  258.10754856600397,
+    "transform_seconds":  28.20663711600355,
+    "load_seconds":  17.990522564999992,
+    "total_seconds":  304.3047082470075,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786318522990",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_timeseries_local2.csv"
+}
+[2026-08-10T02:40:30.1786969+03:00] OK run=v2_m07_timeseries_local2 total=304.3047082470075
+[2026-08-10T02:40:30.1786969+03:00] START order=78 run=v2_m07_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m07_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  188.73371357599535,
+    "transform_seconds":  23.176667684005224,
+    "load_seconds":  18.76579142099945,
+    "total_seconds":  230.67617268100003,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786318841382",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_timeseries_local8.csv"
+}
+[2026-08-10T02:44:33.7253183+03:00] OK run=v2_m07_timeseries_local8 total=230.67617268100003
+[2026-08-10T02:44:33.7253183+03:00] START order=79 run=v2_m07_compact_local2
+spark-master
+{
+    "run_id":  "v2_m07_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  267.3143920479997,
+    "transform_seconds":  15.812952114996733,
+    "load_seconds":  3.5056072430015774,
+    "total_seconds":  286.632951405998,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786319085725",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_compact_local2.csv"
+}
+[2026-08-10T02:49:34.7274979+03:00] OK run=v2_m07_compact_local2 total=286.632951405998
+[2026-08-10T02:49:34.7292372+03:00] START order=80 run=v2_m07_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m07_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  213.3245653710037,
+    "transform_seconds":  23.643470016999345,
+    "load_seconds":  17.665550035002525,
+    "total_seconds":  254.63358542300557,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786319386448",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m07_timeseries_local4.csv"
+}
+[2026-08-10T02:54:03.7009063+03:00] OK run=v2_m07_timeseries_local4 total=254.63358542300557
+[2026-08-10T02:54:03.7026384+03:00] START order=81 run=v2_m08_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m08_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  221.27993759500532,
+    "transform_seconds":  37.13468230599392,
+    "load_seconds":  21.174646637002297,
+    "total_seconds":  279.58926653800154,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260809235423-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_timeseries_standalone2.csv"
+}
+[2026-08-10T02:59:07.0330934+03:00] OK run=v2_m08_timeseries_standalone2 total=279.58926653800154
+[2026-08-10T02:59:07.0447810+03:00] START order=82 run=v2_m08_compact_local8
+spark-master
+{
+    "run_id":  "v2_m08_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  189.36691547599912,
+    "transform_seconds":  13.450301012999262,
+    "load_seconds":  3.3119196420011576,
+    "total_seconds":  206.12913613099954,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786319963989",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_compact_local8.csv"
+}
+[2026-08-10T03:02:52.2359295+03:00] OK run=v2_m08_compact_local8 total=206.12913613099954
+[2026-08-10T03:02:52.2359295+03:00] START order=83 run=v2_m08_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m08_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  244.92389013100183,
+    "transform_seconds":  28.592262823003693,
+    "load_seconds":  21.770942761999322,
+    "total_seconds":  295.28709571600484,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786320183931",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_timeseries_local2.csv"
+}
+[2026-08-10T03:08:01.2262083+03:00] OK run=v2_m08_timeseries_local2 total=295.28709571600484
+[2026-08-10T03:08:01.2262083+03:00] START order=84 run=v2_m08_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m08_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  218.40710452600615,
+    "transform_seconds":  22.85022485799709,
+    "load_seconds":  3.629029089999676,
+    "total_seconds":  244.88635847400292,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810000817-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_compact_standalone1.csv"
+}
+[2026-08-10T03:12:26.0257689+03:00] OK run=v2_m08_compact_standalone1 total=244.88635847400292
+[2026-08-10T03:12:26.0257689+03:00] START order=85 run=v2_m08_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m08_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  194.35239580900088,
+    "transform_seconds":  23.22434030000295,
+    "load_seconds":  16.9405467079996,
+    "total_seconds":  234.51728281700343,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786320758163",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_timeseries_local8.csv"
+}
+[2026-08-10T03:16:34.8867905+03:00] OK run=v2_m08_timeseries_local8 total=234.51728281700343
+[2026-08-10T03:16:34.8867905+03:00] START order=86 run=v2_m08_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m08_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  217.8571653320032,
+    "transform_seconds":  37.727934834001644,
+    "load_seconds":  20.028063308003766,
+    "total_seconds":  275.6131634740086,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810001651-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_timeseries_standalone1.csv"
+}
+[2026-08-10T03:21:29.8945325+03:00] OK run=v2_m08_timeseries_standalone1 total=275.6131634740086
+[2026-08-10T03:21:29.9011936+03:00] START order=87 run=v2_m08_compact_local2
+spark-master
+{
+    "run_id":  "v2_m08_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  255.83370703199762,
+    "transform_seconds":  17.041225531000237,
+    "load_seconds":  3.5631315990031,
+    "total_seconds":  276.43806416200096,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786321302465",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_compact_local2.csv"
+}
+[2026-08-10T03:26:21.5388282+03:00] OK run=v2_m08_compact_local2 total=276.43806416200096
+[2026-08-10T03:26:21.5420114+03:00] START order=88 run=v2_m08_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m08_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  209.50487063999753,
+    "transform_seconds":  22.984473046002677,
+    "load_seconds":  4.560211894000531,
+    "total_seconds":  237.04955558000074,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810002638-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_compact_standalone2.csv"
+}
+[2026-08-10T03:30:39.4725119+03:00] OK run=v2_m08_compact_standalone2 total=237.04955558000074
+[2026-08-10T03:30:39.4761846+03:00] START order=89 run=v2_m08_compact_local4
+spark-master
+{
+    "run_id":  "v2_m08_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  213.44273401799728,
+    "transform_seconds":  15.912486649001949,
+    "load_seconds":  4.2396817179978825,
+    "total_seconds":  233.5949023849971,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786321852019",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_compact_local4.csv"
+}
+[2026-08-10T03:34:48.0525416+03:00] OK run=v2_m08_compact_local4 total=233.5949023849971
+[2026-08-10T03:34:48.0525416+03:00] START order=90 run=v2_m08_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m08_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  213.9257265339984,
+    "transform_seconds":  23.723582521000935,
+    "load_seconds":  17.315847035002662,
+    "total_seconds":  254.96515609000198,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786322100407",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m08_timeseries_local4.csv"
+}
+[2026-08-10T03:39:17.4140470+03:00] OK run=v2_m08_timeseries_local4 total=254.96515609000198
+[2026-08-10T03:39:17.4157903+03:00] START order=91 run=v2_m09_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m09_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  215.22371305300476,
+    "transform_seconds":  37.560716394997144,
+    "load_seconds":  20.923059902001114,
+    "total_seconds":  273.707489350003,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810003934-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_timeseries_standalone1.csv"
+}
+[2026-08-10T03:44:11.6944323+03:00] OK run=v2_m09_timeseries_standalone1 total=273.707489350003
+[2026-08-10T03:44:11.7012182+03:00] START order=92 run=v2_m09_compact_local2
+spark-master
+{
+    "run_id":  "v2_m09_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  273.82192160499835,
+    "transform_seconds":  21.18490326400206,
+    "load_seconds":  4.91985224900418,
+    "total_seconds":  299.9266771180046,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786322672281",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_compact_local2.csv"
+}
+[2026-08-10T03:49:35.5727871+03:00] OK run=v2_m09_compact_local2 total=299.9266771180046
+[2026-08-10T03:49:35.5727871+03:00] START order=93 run=v2_m09_compact_local8
+spark-master
+{
+    "run_id":  "v2_m09_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  214.15805977900163,
+    "transform_seconds":  13.15876627999387,
+    "load_seconds":  4.2797002629959024,
+    "total_seconds":  231.5965263219914,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786322994609",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_compact_local8.csv"
+}
+[2026-08-10T03:53:48.1466529+03:00] OK run=v2_m09_compact_local8 total=231.5965263219914
+[2026-08-10T03:53:48.1466529+03:00] START order=94 run=v2_m09_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m09_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  221.51166086999729,
+    "transform_seconds":  22.188702709005156,
+    "load_seconds":  3.492628363004769,
+    "total_seconds":  247.1929919420072,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810005408-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_compact_standalone2.csv"
+}
+[2026-08-10T03:58:18.8855090+03:00] OK run=v2_m09_compact_standalone2 total=247.1929919420072
+[2026-08-10T03:58:18.8872501+03:00] START order=95 run=v2_m09_compact_local4
+spark-master
+{
+    "run_id":  "v2_m09_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  227.81552454800112,
+    "transform_seconds":  13.626230707996001,
+    "load_seconds":  3.2628793830008362,
+    "total_seconds":  244.70463463899796,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786323514747",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_compact_local4.csv"
+}
+[2026-08-10T04:02:41.2846410+03:00] OK run=v2_m09_compact_local4 total=244.70463463899796
+[2026-08-10T04:02:41.2846410+03:00] START order=96 run=v2_m09_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m09_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  216.02408596400346,
+    "transform_seconds":  22.805909030001203,
+    "load_seconds":  3.821849063002446,
+    "total_seconds":  242.6518440570071,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810010258-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_compact_standalone1.csv"
+}
+[2026-08-10T04:07:04.2699080+03:00] OK run=v2_m09_compact_standalone1 total=242.6518440570071
+[2026-08-10T04:07:04.2704460+03:00] START order=97 run=v2_m09_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m09_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  275.7493499539996,
+    "transform_seconds":  27.2729535460021,
+    "load_seconds":  17.545653287001187,
+    "total_seconds":  320.5679567870029,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786324037414",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_timeseries_local2.csv"
+}
+[2026-08-10T04:12:40.1707751+03:00] OK run=v2_m09_timeseries_local2 total=320.5679567870029
+[2026-08-10T04:12:40.1749244+03:00] START order=98 run=v2_m09_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m09_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  215.14152301799913,
+    "transform_seconds":  24.16033152899763,
+    "load_seconds":  17.550070516001142,
+    "total_seconds":  256.8519250629979,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786324371973",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_timeseries_local4.csv"
+}
+[2026-08-10T04:17:11.3136730+03:00] OK run=v2_m09_timeseries_local4 total=256.8519250629979
+[2026-08-10T04:17:11.3136730+03:00] START order=99 run=v2_m09_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m09_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  214.2535192180003,
+    "transform_seconds":  39.039366746997985,
+    "load_seconds":  19.162131598000997,
+    "total_seconds":  272.4550175629993,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810011729-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_timeseries_standalone2.csv"
+}
+[2026-08-10T04:22:04.3817067+03:00] OK run=v2_m09_timeseries_standalone2 total=272.4550175629993
+[2026-08-10T04:22:04.3840607+03:00] START order=100 run=v2_m09_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m09_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  190.78599790600128,
+    "transform_seconds":  22.504032310003822,
+    "load_seconds":  19.53386752899678,
+    "total_seconds":  232.8238977450019,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786324937490",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m09_timeseries_local8.csv"
+}
+[2026-08-10T04:26:12.4521377+03:00] OK run=v2_m09_timeseries_local8 total=232.8238977450019
+[2026-08-10T04:26:12.4538776+03:00] START order=101 run=v2_m10_compact_local2
+spark-master
+{
+    "run_id":  "v2_m10_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  270.5009524039997,
+    "transform_seconds":  17.450512313997024,
+    "load_seconds":  4.36229194200132,
+    "total_seconds":  292.31375665999803,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786325184325",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_compact_local2.csv"
+}
+[2026-08-10T04:31:18.4812175+03:00] OK run=v2_m10_compact_local2 total=292.31375665999803
+[2026-08-10T04:31:18.4834069+03:00] START order=102 run=v2_m10_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m10_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  263.1582247719998,
+    "transform_seconds":  26.597703121995437,
+    "load_seconds":  17.43941157899826,
+    "total_seconds":  307.1953394729935,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786325490394",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_timeseries_local2.csv"
+}
+[2026-08-10T04:36:40.0221212+03:00] OK run=v2_m10_timeseries_local2 total=307.1953394729935
+[2026-08-10T04:36:40.0354178+03:00] START order=103 run=v2_m10_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m10_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  217.71619849600393,
+    "transform_seconds":  36.95837854599813,
+    "load_seconds":  20.440321198002493,
+    "total_seconds":  275.11489824000455,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810013657-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_timeseries_standalone1.csv"
+}
+[2026-08-10T04:41:35.6847866+03:00] OK run=v2_m10_timeseries_standalone1 total=275.11489824000455
+[2026-08-10T04:41:35.6878664+03:00] START order=104 run=v2_m10_compact_local8
+spark-master
+{
+    "run_id":  "v2_m10_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  189.45012507799402,
+    "transform_seconds":  12.105553216999397,
+    "load_seconds":  3.7915985740037286,
+    "total_seconds":  205.34727686899714,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786326108900",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_compact_local8.csv"
+}
+[2026-08-10T04:45:16.4032673+03:00] OK run=v2_m10_compact_local8 total=205.34727686899714
+[2026-08-10T04:45:16.4062991+03:00] START order=105 run=v2_m10_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m10_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  218.21977496999898,
+    "transform_seconds":  23.958061669996823,
+    "load_seconds":  17.12092496999685,
+    "total_seconds":  259.29876160999265,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786326328948",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_timeseries_local4.csv"
+}
+[2026-08-10T04:49:50.8968261+03:00] OK run=v2_m10_timeseries_local4 total=259.29876160999265
+[2026-08-10T04:49:50.9018150+03:00] START order=106 run=v2_m10_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m10_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  212.62141574800626,
+    "transform_seconds":  36.84039356299763,
+    "load_seconds":  19.36591272499936,
+    "total_seconds":  268.82772203600325,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810015008-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_timeseries_standalone2.csv"
+}
+[2026-08-10T04:54:40.5081748+03:00] OK run=v2_m10_timeseries_standalone2 total=268.82772203600325
+[2026-08-10T04:54:40.5081748+03:00] START order=107 run=v2_m10_compact_local4
+spark-master
+{
+    "run_id":  "v2_m10_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  212.92730653699982,
+    "transform_seconds":  13.43403134500113,
+    "load_seconds":  3.73727313499694,
+    "total_seconds":  230.0986110169979,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786326893632",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_compact_local4.csv"
+}
+[2026-08-10T04:58:45.5291788+03:00] OK run=v2_m10_compact_local4 total=230.0986110169979
+[2026-08-10T04:58:45.5291788+03:00] START order=108 run=v2_m10_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m10_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  186.78258526799618,
+    "transform_seconds":  22.01704364100442,
+    "load_seconds":  17.513983937002195,
+    "total_seconds":  226.3136128460028,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786327137142",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_timeseries_local8.csv"
+}
+[2026-08-10T05:02:45.8453636+03:00] OK run=v2_m10_timeseries_local8 total=226.3136128460028
+[2026-08-10T05:02:45.8505051+03:00] START order=109 run=v2_m10_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m10_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  229.47901751099562,
+    "transform_seconds":  23.649085845994705,
+    "load_seconds":  4.364257456996711,
+    "total_seconds":  257.49236081398703,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810020305-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_compact_standalone1.csv"
+}
+[2026-08-10T05:07:26.3755331+03:00] OK run=v2_m10_compact_standalone1 total=257.49236081398703
+[2026-08-10T05:07:26.3755331+03:00] START order=110 run=v2_m10_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m10_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  211.5735031170043,
+    "transform_seconds":  22.418784327004687,
+    "load_seconds":  3.9320663510006852,
+    "total_seconds":  237.92435379500967,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810020750-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m10_compact_standalone2.csv"
+}
+[2026-08-10T05:11:52.2118343+03:00] OK run=v2_m10_compact_standalone2 total=237.92435379500967
+[2026-08-10T05:11:52.2153282+03:00] START order=111 run=v2_m11_compact_local4
+spark-master
+{
+    "run_id":  "v2_m11_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  214.41417099599494,
+    "transform_seconds":  14.033670226999675,
+    "load_seconds":  3.6387568229984026,
+    "total_seconds":  232.08659804599301,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786327929281",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_compact_local4.csv"
+}
+[2026-08-10T05:16:03.3176430+03:00] OK run=v2_m11_compact_local4 total=232.08659804599301
+[2026-08-10T05:16:03.3213249+03:00] START order=112 run=v2_m11_compact_local2
+spark-master
+{
+    "run_id":  "v2_m11_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  264.8371206169977,
+    "transform_seconds":  18.4568126249942,
+    "load_seconds":  3.9824182459997246,
+    "total_seconds":  287.27635148799163,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786328174874",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_compact_local2.csv"
+}
+[2026-08-10T05:21:04.2816160+03:00] OK run=v2_m11_compact_local2 total=287.27635148799163
+[2026-08-10T05:21:04.2870498+03:00] START order=113 run=v2_m11_compact_local8
+spark-master
+{
+    "run_id":  "v2_m11_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  210.90952901000128,
+    "transform_seconds":  12.725120644994604,
+    "load_seconds":  3.424835914003779,
+    "total_seconds":  227.05948556899966,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786328476900",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_compact_local8.csv"
+}
+[2026-08-10T05:25:06.0992528+03:00] OK run=v2_m11_compact_local8 total=227.05948556899966
+[2026-08-10T05:25:06.0992528+03:00] START order=114 run=v2_m11_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m11_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  216.783375058003,
+    "transform_seconds":  36.319227623993356,
+    "load_seconds":  20.11353228000371,
+    "total_seconds":  273.21613496200007,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810022523-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_timeseries_standalone1.csv"
+}
+[2026-08-10T05:29:59.4643493+03:00] OK run=v2_m11_timeseries_standalone1 total=273.21613496200007
+[2026-08-10T05:29:59.4755991+03:00] START order=115 run=v2_m11_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m11_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  219.67178345499997,
+    "transform_seconds":  24.322855006997997,
+    "load_seconds":  3.977217917999951,
+    "total_seconds":  247.97185637999792,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810023018-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_compact_standalone1.csv"
+}
+[2026-08-10T05:34:28.8854736+03:00] OK run=v2_m11_compact_standalone1 total=247.97185637999792
+[2026-08-10T05:34:28.8976830+03:00] START order=116 run=v2_m11_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m11_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  195.41731209099817,
+    "transform_seconds":  22.72687741700065,
+    "load_seconds":  17.320870786999876,
+    "total_seconds":  235.4650602949987,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786329281499",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_timeseries_local4.csv"
+}
+[2026-08-10T05:38:39.3406245+03:00] OK run=v2_m11_timeseries_local4 total=235.4650602949987
+[2026-08-10T05:38:39.3465563+03:00] START order=117 run=v2_m11_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m11_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  267.7061116869954,
+    "transform_seconds":  29.73949873800302,
+    "load_seconds":  21.942080190005072,
+    "total_seconds":  319.3876906150035,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786329531291",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_timeseries_local2.csv"
+}
+[2026-08-10T05:44:13.7224377+03:00] OK run=v2_m11_timeseries_local2 total=319.3876906150035
+[2026-08-10T05:44:13.7227690+03:00] START order=118 run=v2_m11_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m11_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  185.3239309769997,
+    "transform_seconds":  21.38154328100063,
+    "load_seconds":  17.523467028993764,
+    "total_seconds":  224.2289412869941,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786329866747",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_timeseries_local8.csv"
+}
+[2026-08-10T05:48:13.4814088+03:00] OK run=v2_m11_timeseries_local8 total=224.2289412869941
+[2026-08-10T05:48:13.4852867+03:00] START order=119 run=v2_m11_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m11_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  221.22506929099472,
+    "transform_seconds":  37.938064970003325,
+    "load_seconds":  18.544696427001327,
+    "total_seconds":  277.7078306879994,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810024832-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_timeseries_standalone2.csv"
+}
+[2026-08-10T05:53:14.5436259+03:00] OK run=v2_m11_timeseries_standalone2 total=277.7078306879994
+[2026-08-10T05:53:14.5494070+03:00] START order=120 run=v2_m11_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m11_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  219.996991222004,
+    "transform_seconds":  22.969381290997262,
+    "load_seconds":  3.6540991570000187,
+    "total_seconds":  246.62047167000128,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810025333-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m11_compact_standalone2.csv"
+}
+[2026-08-10T05:57:42.5180974+03:00] OK run=v2_m11_compact_standalone2 total=246.62047167000128
+[2026-08-10T05:57:42.5274709+03:00] START order=121 run=v2_m12_timeseries_local2
+spark-master
+{
+    "run_id":  "v2_m12_timeseries_local2",
+    "scenario":  "local2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  256.4294201349985,
+    "transform_seconds":  26.943770885998674,
+    "load_seconds":  17.441039876001014,
+    "total_seconds":  300.8142308969982,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786330676353",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_timeseries_local2.csv"
+}
+[2026-08-10T06:02:59.1562837+03:00] OK run=v2_m12_timeseries_local2 total=300.8142308969982
+[2026-08-10T06:02:59.1630910+03:00] START order=122 run=v2_m12_timeseries_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m12_timeseries_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  222.95869444999698,
+    "transform_seconds":  44.803483842995774,
+    "load_seconds":  20.77600847800204,
+    "total_seconds":  288.5381867709948,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810030316-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_timeseries_standalone1.csv"
+}
+[2026-08-10T06:08:08.7524683+03:00] OK run=v2_m12_timeseries_standalone1 total=288.5381867709948
+[2026-08-10T06:08:08.7524683+03:00] START order=123 run=v2_m12_timeseries_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m12_timeseries_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  219.0623229740013,
+    "transform_seconds":  39.163679101002344,
+    "load_seconds":  18.635244404998957,
+    "total_seconds":  276.8612464800026,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810030831-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_timeseries_standalone2.csv"
+}
+[2026-08-10T06:13:12.0038686+03:00] OK run=v2_m12_timeseries_standalone2 total=276.8612464800026
+[2026-08-10T06:13:12.0038686+03:00] START order=124 run=v2_m12_compact_local4
+spark-master
+{
+    "run_id":  "v2_m12_compact_local4",
+    "scenario":  "local4",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  218.19450661700103,
+    "transform_seconds":  13.558003673002531,
+    "load_seconds":  3.674160735004989,
+    "total_seconds":  235.42667102500855,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786331605207",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_compact_local4.csv"
+}
+[2026-08-10T06:17:22.9251736+03:00] OK run=v2_m12_compact_local4 total=235.42667102500855
+[2026-08-10T06:17:22.9279477+03:00] START order=125 run=v2_m12_compact_standalone2
+spark-master
+spark-worker-1
+spark-worker-2
+{
+    "run_id":  "v2_m12_compact_standalone2",
+    "scenario":  "standalone2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  210.64997704500274,
+    "transform_seconds":  21.608367594999436,
+    "load_seconds":  4.257139755995013,
+    "total_seconds":  236.5154843959972,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810031740-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_compact_standalone2.csv"
+}
+[2026-08-10T06:21:40.5643824+03:00] OK run=v2_m12_compact_standalone2 total=236.5154843959972
+[2026-08-10T06:21:40.5661218+03:00] START order=126 run=v2_m12_timeseries_local4
+spark-master
+{
+    "run_id":  "v2_m12_timeseries_local4",
+    "scenario":  "local4",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  218.7606957379976,
+    "transform_seconds":  27.039463066997996,
+    "load_seconds":  18.124043859002995,
+    "total_seconds":  263.9242026639986,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786332112768",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_timeseries_local4.csv"
+}
+[2026-08-10T06:26:18.6735532+03:00] OK run=v2_m12_timeseries_local4 total=263.9242026639986
+[2026-08-10T06:26:18.6770339+03:00] START order=127 run=v2_m12_timeseries_local8
+spark-master
+{
+    "run_id":  "v2_m12_timeseries_local8",
+    "scenario":  "local8",
+    "workload":  "timeseries",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  1180395,
+    "extract_seconds":  202.99339574299665,
+    "transform_seconds":  25.747628228004032,
+    "load_seconds":  17.77719605499442,
+    "total_seconds":  246.5182200259951,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786332389878",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_timeseries_local8.csv"
+}
+[2026-08-10T06:30:39.5733335+03:00] OK run=v2_m12_timeseries_local8 total=246.5182200259951
+[2026-08-10T06:30:39.5866312+03:00] START order=128 run=v2_m12_compact_local2
+spark-master
+{
+    "run_id":  "v2_m12_compact_local2",
+    "scenario":  "local2",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  291.17967545000283,
+    "transform_seconds":  17.950160729000345,
+    "load_seconds":  3.3540890060030506,
+    "total_seconds":  312.4839251850062,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786332655858",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_compact_local2.csv"
+}
+[2026-08-10T06:36:10.8940991+03:00] OK run=v2_m12_compact_local2 total=312.4839251850062
+[2026-08-10T06:36:10.8958614+03:00] START order=129 run=v2_m12_compact_local8
+spark-master
+{
+    "run_id":  "v2_m12_compact_local8",
+    "scenario":  "local8",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  194.83208371200453,
+    "transform_seconds":  13.70239775700611,
+    "load_seconds":  3.967431608994957,
+    "total_seconds":  212.5019130780056,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\local-1786332983508",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_compact_local8.csv"
+}
+[2026-08-10T06:39:57.8626348+03:00] OK run=v2_m12_compact_local8 total=212.5019130780056
+[2026-08-10T06:39:57.8667151+03:00] START order=130 run=v2_m12_compact_standalone1
+spark-master
+spark-worker-1
+{
+    "run_id":  "v2_m12_compact_standalone1",
+    "scenario":  "standalone1",
+    "workload":  "compact",
+    "cpu_budget":  8,
+    "memory_budget_gib":  8,
+    "input_format":  "parquet",
+    "feature_rows":  58976,
+    "extract_seconds":  225.15003828199406,
+    "transform_seconds":  22.417746414001158,
+    "load_seconds":  4.212171243001649,
+    "total_seconds":  251.77995593899686,
+    "event_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\spark-events\\app-20260810034015-0000",
+    "resource_log":  "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised\\outputs\\validation\\logs\\resource_usage_v2_m12_compact_standalone1.csv"
+}
+[2026-08-10T06:44:29.8585698+03:00] OK run=v2_m12_compact_standalone1 total=251.77995593899686
+[2026-08-10T06:44:29.8744633+03:00] MATRIX COMPLETE

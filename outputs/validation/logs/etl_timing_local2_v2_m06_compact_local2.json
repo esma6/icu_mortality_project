@@ -1,0 +1,22 @@
+{
+  "scenario": "local2",
+  "run_id": "v2_m06_compact_local2",
+  "spark_master": "local[2]",
+  "input_format": "parquet",
+  "extract_seconds": 285.31385602799855,
+  "transform_seconds": 17.929851495995536,
+  "load_seconds": 3.640786436997587,
+  "total_seconds": 306.8844939609917,
+  "feature_rows": 58976,
+  "raw_counts": {
+    "admissions": 58976,
+    "patients": 46520,
+    "icustays": 61532,
+    "chartevents": 330712483,
+    "labevents": 22245034
+  },
+  "outputs": {
+    "parquet": "/app/outputs/validation/features/feature_matrix_validation_compact_local2.parquet",
+    "csv_dir": "/app/outputs/validation/features/feature_matrix_validation_compact_local2_csv"
+  }
+}

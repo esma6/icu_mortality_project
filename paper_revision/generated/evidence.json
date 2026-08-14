@@ -1,0 +1,20 @@
+{
+  "compact_feature_rows": [
+    58976
+  ],
+  "timeseries_feature_rows": [
+    1180395
+  ],
+  "input_formats": [
+    "parquet"
+  ],
+  "runs_per_workload_scenario": "{('Compact', '1-node'): 5, ('Compact', '1-node-4c'): 5, ('Compact', '1-node-8c'): 5, ('Compact', '2-node'): 5, ('Compact', '3-node'): 5, ('Timeseries', '1-node'): 5, ('Timeseries', '1-node-4c'): 5, ('Timeseries', '1-node-8c'): 5, ('Timeseries', '2-node'): 5, ('Timeseries', '3-node'): 5}",
+  "clip_stats": {
+    "candidate_measurement_rows": 28794711,
+    "kept_rows": 28652828,
+    "clipped_rows": 141883,
+    "clipped_pct": 0.493,
+    "window_hours": 6,
+    "note": "vital+valuenum+range+charttime filtreli, stay_ref(intime notnull) join sonrasi olcum satirlari; clipped = charttime ICU kalisi disinda"
+  }
+}

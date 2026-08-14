@@ -1,0 +1,31 @@
+{
+  "platform": {
+    "system": "Windows",
+    "release": "10",
+    "version": "10.0.26100",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
+  },
+  "cpu": {
+    "physical_cores": 10,
+    "logical_cores": 12,
+    "current_frequency_mhz": 1300.0
+  },
+  "memory": {
+    "total_gb": 15.529
+  },
+  "disk": {
+    "filesystem_path": "C:\\Users\\ETU\\Downloads\\icu_mortality_project_revised\\icu_mortality_project_revised",
+    "total_gb": 476.196,
+    "used_gb": 343.576,
+    "free_gb": 132.62
+  },
+  "software": {
+    "docker": "Docker version 29.4.0, build 9d7ad9f",
+    "docker_compose": "Docker Compose version v5.1.2",
+    "java": "openjdk version \"17.0.18\" 2026-01-20 LTS\nOpenJDK Runtime Environment Microsoft-13106358 (build 17.0.18+8-LTS)\nOpenJDK 64-Bit Server VM Microsoft-13106358 (build 17.0.18+8-LTS, mixed mode, sharing)",
+    "spark_submit": null,
+    "wsl": "W\u0000S\u0000L\u0000 \u0000s\u0000ü\u0000r\u0000ü\u0000m\u0000ü\u0000:\u0000 \u00002\u0000.\u00006\u0000.\u00003\u0000.\u00000\u0000\n\u0000\n\u0000Ç\u0000e\u0000k\u0000i\u0000r\u0000d\u0000e\u0000k\u0000 \u0000s\u0000ü\u0000r\u0000ü\u0000m\u0000ü\u0000:\u0000 \u00006\u0000.\u00006\u0000.\u00008\u00007\u0000.\u00002\u0000-\u00001\u0000\n\u0000\n\u0000W\u0000S\u0000L\u0000g\u0000 \u0000s\u0000ü\u0000r\u0000ü\u0000m\u0000ü\u0000:\u0000 \u00001\u0000.\u00000\u0000.\u00007\u00001\u0000\n\u0000\n\u0000M\u0000S\u0000R\u0000D\u0000C\u0000 \u0000s\u0000ü\u0000r\u0000ü\u0000m\u0000ü\u0000:\u0000 \u00001\u0000.\u00002\u0000.\u00006\u00003\u00005\u00003\u0000\n\u0000\n\u0000D\u0000i\u0000r\u0000e\u0000c\u0000t\u00003\u0000D\u0000 \u0000s\u0000ü\u0000r\u0000ü\u0000m\u0000ü\u0000:\u0000 \u00001\u0000.\u00006\u00001\u00001\u0000.\u00001\u0000-\u00008\u00001\u00005\u00002\u00008\u00005\u00001\u00001\u0000\n\u0000\n\u0000D\u0000X\u0000C\u0000o\u0000r\u0000e\u0000 \u0000s\u0000ü\u0000r\u0000ü\u0000m\u0000ü\u0000:\u0000 \u00001\u00000\u0000.\u00000\u0000.\u00002\u00006\u00001\u00000\u00000\u0000.\u00001\u0000-\u00002\u00004\u00000\u00003\u00003\u00001\u0000-\u00001\u00004\u00003\u00005\u0000.\u0000g\u0000e\u0000-\u0000r\u0000e\u0000l\u0000e\u0000a\u0000s\u0000e\u0000\n\u0000\n\u0000W\u0000i\u0000n\u0000d\u0000o\u0000w\u0000s\u0000 \u0000s\u0000ü\u0000r\u0000ü\u0000m\u0000ü\u0000:\u0000 \u00001\u00000\u0000.\u00000\u0000.\u00002\u00006\u00001\u00000\u00000\u0000.\u00001\u00007\u00004\u00002\u0000\n\u0000\n\u0000"
+  }
+}

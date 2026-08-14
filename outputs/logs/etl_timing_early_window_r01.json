@@ -1,0 +1,22 @@
+{
+  "scenario": "early_window",
+  "run_id": "r01",
+  "spark_master": "local[8]",
+  "input_format": "parquet",
+  "extract_seconds": 228.48200864403043,
+  "transform_seconds": 33.021859829023015,
+  "load_seconds": 9.096267381042708,
+  "total_seconds": 270.60013585409615,
+  "feature_rows": 31252,
+  "raw_counts": {
+    "admissions": 58976,
+    "patients": 46520,
+    "icustays": 61532,
+    "chartevents": 330712483,
+    "labevents": 22245034
+  },
+  "outputs": {
+    "parquet": "/app/outputs/features/feature_matrix_early_window.parquet",
+    "csv_dir": "/app/outputs/features/feature_matrix_early_window_csv"
+  }
+}

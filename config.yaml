@@ -1,0 +1,99 @@
+project:
+  name: icu_mortality_project_revised
+  random_state: 42
+
+paths:
+  # Can be overridden with environment variable MIMIC_DIR.
+  mimic_dir: "./data/mimic-iii-clinical-database-1.4"
+  # Parquet'e dönüştürülmüş tabloların dizini (convert_mimic_to_parquet.py çıktısı).
+  # /data/mimic salt-okunur (:ro) mount olduğu için Parquet'i YAZILABİLİR olan
+  # /app (proje kökü, .:/app mount'u) altına yazıyoruz. Container içinde ETL
+  # çalışırken cwd=/app olduğundan bu mutlak yol güvenlidir.
+  parquet_dir: "/app/data/mimic_parquet"
+  output_dir: "./outputs"
+  feature_dir: "./outputs/features"
+  table_dir: "./outputs/tables"
+  figure_dir: "./outputs/figures"
+  log_dir: "./outputs/logs"
+  report_dir: "./outputs/reports"
+
+spark:
+  app_name: "MIMIC_III_Distributed_ETL"
+  # All three scenarios now run inside the spark-master container so the
+  # execution environment (Linux, Docker I/O, mounted /data and /app) is
+  # identical across configurations; only the number of active Spark workers
+  # differs. The baseline uses local[*] INSIDE the container, not on the host.
+  master_1node: "local[2]"
+  master_1node_4c: "local[4]"
+  master_1node_8c: "local[8]"
+  master_2node: "spark://spark-master:7077"
+  master_3node: "spark://spark-master:7077"
+  executor_memory: "2g"
+  driver_memory: "2g"
+  executor_cores: "2"
+  shuffle_partitions: "8"
+  output_partitions: 1
+
+etl:
+  # Girdi formatı: "csv" (.csv.gz okur, varsayılan) veya "parquet".
+  # csv.gz sonuçları alındıktan sonra bunu "parquet" yapıp deneyi tekrar
+  # koşarak format-kontrollü ölçeklenebilirlik karşılaştırması yapılır.
+  input_format: "parquet"
+  write_csv: true
+  write_parquet: true
+  # Keep low-dimensional feature set for a compact and scalable ETL pipeline.
+  feature_set: "timeseries"
+  # Timeseries modunda her ICU kalışını kaç saatlik pencerelere böleceğimiz.
+  timeseries_window_hours: 6
+  # Timeseries pencerelerini gerçek ICU kalışına (intime..outtime) kırp. Kalış-dışı
+  # patolojik charttime ölçümlerini (ölçüm-zamanı hatası) eler; window_idx'i gerçek
+  # kalış süresine bağlar. Sadece timeseries dalını etkiler; compact/wide değişmez.
+  timeseries_clip_to_stay: true
+  # Out-of-range clinical values are converted to null before aggregation.
+  apply_clinical_range_filter: true
+  # Map age > 89 to 90, consistent with MIMIC-III de-identification practice.
+  cap_age_at_90: true
+  # "early_window" feature_set (invoked via ETL_FEATURE_SET_OVERRIDE, not this default):
+  # leak-free early-prediction feature set. Only vitals/labs measured within the first
+  # early_window_hours of ICU admission are used; admissions with ICU LOS below
+  # early_window_min_los_hours are excluded (Harutyunyan et al. 48h convention, ref [7]).
+  early_window_hours: 48
+  early_window_min_los_hours: 48
+
+experiments:
+  repeats: 5
+  scenarios:
+    - name: "1-node"
+      node_count: 1
+      master_key: "master_1node"
+      active_workers: 0
+    - name: "1-node-4c"
+      node_count: 1
+      master_key: "master_1node_4c"
+      active_workers: 0
+    - name: "1-node-8c"
+      node_count: 1
+      master_key: "master_1node_8c"
+      active_workers: 0
+    - name: "2-node"
+      node_count: 2
+      master_key: "master_2node"
+      active_workers: 1
+    - name: "3-node"
+      node_count: 3
+      master_key: "master_3node"
+      active_workers: 2
+      
+monitoring:
+  enabled: true
+  interval_seconds: 1.0
+
+ml:
+  label_col: "mortality_label"
+  test_size: 0.20
+  cv_folds: 5
+  n_repeats: 30
+  outlier_clip_quantiles: [0.01, 0.99]
+  use_feature_selection: false
+  feature_selection_k: "all"
+  probability_threshold: 0.50

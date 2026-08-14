@@ -1,0 +1,6 @@
+scenario,node_count,total_seconds_mean,total_seconds_std,speedup_mean,efficiency_mean
+1-node,1,305.296,7.304,1.0,1.0
+1-node-4c,1,290.715,9.919,1.05,1.05
+1-node-8c,1,264.515,26.984,1.154,1.154
+2-node,2,316.267,64.004,0.965,0.483
+3-node,3,468.018,120.878,0.652,0.217

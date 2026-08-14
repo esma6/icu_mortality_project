@@ -1,0 +1,74 @@
+services:
+  spark-master:
+    image: apache/spark:3.5.1
+    container_name: spark-master
+    hostname: spark-master
+    command: >
+      /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+      --host spark-master
+      --port 7077
+      --webui-port 8080
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ${MIMIC_DIR:-./data/mimic-iii-clinical-database-1.4}:/data/mimic:ro
+      - .:/app
+    networks:
+      - spark-net
+
+  spark-worker-1:
+    image: apache/spark:3.5.1
+    container_name: spark-worker-1
+    hostname: spark-worker-1
+    command: >
+      /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker
+      spark://spark-master:7077
+      --cores ${SPARK_WORKER_CORES:-6}
+      --memory ${SPARK_WORKER_MEMORY:-6g}
+      --webui-port 8081
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ${MIMIC_DIR:-./data/mimic-iii-clinical-database-1.4}:/data/mimic:ro
+      - .:/app
+    networks:
+      - spark-net
+
+  spark-worker-2:
+    image: apache/spark:3.5.1
+    container_name: spark-worker-2
+    hostname: spark-worker-2
+    command: >
+      /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker
+      spark://spark-master:7077
+      --cores ${SPARK_WORKER_CORES:-6}
+      --memory ${SPARK_WORKER_MEMORY:-6g}
+      --webui-port 8082
+    depends_on:
+      - spark-master
+    ports:
+      - "8082:8082"
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ${MIMIC_DIR:-./data/mimic-iii-clinical-database-1.4}:/data/mimic:ro
+      - .:/app
+    networks:
+      - spark-net
+
+networks:
+  spark-net:
+    driver: bridge

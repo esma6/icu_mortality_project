@@ -1,0 +1,112 @@
+﻿docker.exe : 26/08/09 19:42:34 INFO SparkContext: Running Spark version 3.5.1
+At C:\Users\ETU\Downloads\icu_mortality_project_revised\icu_mortality_project_revised\scripts\run_validation_pilot.ps1:
+107 char:5
++     & docker @args 2>&1 | Out-File -FilePath $submitLog -Encoding utf ...
++     ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (26/08/09 19:42:...k version 3.5.1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+26/08/09 19:42:34 INFO SparkContext: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+26/08/09 19:42:34 INFO SparkContext: Java version 11.0.22
+26/08/09 19:42:34 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java c
+lasses where applicable
+26/08/09 19:42:35 INFO ResourceUtils: ==============================================================
+26/08/09 19:42:35 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/08/09 19:42:35 INFO ResourceUtils: ==============================================================
+26/08/09 19:42:35 INFO SparkContext: Submitted application: MIMIC_III_Distributed_ETL
+26/08/09 19:42:35 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, 
+amount: 1, script: , vendor: , memory -> name: memory, amount: 512, script: , vendor: , offHeap -> name: offHeap, amoun
+t: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/08/09 19:42:35 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/08/09 19:42:35 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/08/09 19:42:35 INFO SecurityManager: Changing view acls to: spark
+26/08/09 19:42:35 INFO SecurityManager: Changing modify acls to: spark
+26/08/09 19:42:35 INFO SecurityManager: Changing view acls groups to: 
+26/08/09 19:42:35 INFO SecurityManager: Changing modify acls groups to: 
+26/08/09 19:42:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view per
+missions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissi
+ons: EMPTY
+26/08/09 19:42:35 INFO Utils: Successfully started service 'sparkDriver' on port 45941.
+26/08/09 19:42:35 INFO SparkEnv: Registering MapOutputTracker
+26/08/09 19:42:35 INFO SparkEnv: Registering BlockManagerMaster
+26/08/09 19:42:35 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting top
+ology information
+26/08/09 19:42:35 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/08/09 19:42:35 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/08/09 19:42:35 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b8e23b97-e1d0-4033-9180-96b7f85daa1a
+26/08/09 19:42:35 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/08/09 19:42:35 INFO SparkEnv: Registering OutputCommitCoordinator
+26/08/09 19:42:35 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/08/09 19:42:35 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/08/09 19:42:35 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/08/09 19:42:35 INFO TransportClientFactory: Successfully created connection to spark-master/172.20.0.2:7077 after 57
+ ms (0 ms spent in bootstraps)
+26/08/09 19:42:36 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260809194235-0000
+26/08/09 19:42:36 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' o
+n port 45647.
+26/08/09 19:42:36 INFO NettyBlockTransferService: Server created on spark-master 0.0.0.0:45647
+26/08/09 19:42:36 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication 
+policy
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260809194235-0000/0 on worker-20260809
+194224-172.20.0.4-41703 (172.20.0.4:41703) with 1 core(s)
+26/08/09 19:42:36 INFO StandaloneSchedulerBackend: Granted executor ID app-20260809194235-0000/0 on hostPort 172.20.0.4
+:41703 with 1 core(s), 512.0 MiB RAM
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260809194235-0000/1 on worker-20260809
+194224-172.20.0.4-41703 (172.20.0.4:41703) with 1 core(s)
+26/08/09 19:42:36 INFO StandaloneSchedulerBackend: Granted executor ID app-20260809194235-0000/1 on hostPort 172.20.0.4
+:41703 with 1 core(s), 512.0 MiB RAM
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260809194235-0000/2 on worker-20260809
+194224-172.20.0.4-41703 (172.20.0.4:41703) with 1 core(s)
+26/08/09 19:42:36 INFO StandaloneSchedulerBackend: Granted executor ID app-20260809194235-0000/2 on hostPort 172.20.0.4
+:41703 with 1 core(s), 512.0 MiB RAM
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260809194235-0000/3 on worker-20260809
+194224-172.20.0.3-36971 (172.20.0.3:36971) with 1 core(s)
+26/08/09 19:42:36 INFO StandaloneSchedulerBackend: Granted executor ID app-20260809194235-0000/3 on hostPort 172.20.0.3
+:36971 with 1 core(s), 512.0 MiB RAM
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260809194235-0000/4 on worker-20260809
+194224-172.20.0.3-36971 (172.20.0.3:36971) with 1 core(s)
+26/08/09 19:42:36 INFO StandaloneSchedulerBackend: Granted executor ID app-20260809194235-0000/4 on hostPort 172.20.0.3
+:36971 with 1 core(s), 512.0 MiB RAM
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260809194235-0000/5 on worker-20260809
+194224-172.20.0.3-36971 (172.20.0.3:36971) with 1 core(s)
+26/08/09 19:42:36 INFO StandaloneSchedulerBackend: Granted executor ID app-20260809194235-0000/5 on hostPort 172.20.0.3
+:36971 with 1 core(s), 512.0 MiB RAM
+26/08/09 19:42:36 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 45647, None)
+26/08/09 19:42:36 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:45647 with 1048.8 MiB RAM, Bl
+ockManagerId(driver, spark-master, 45647, None)
+26/08/09 19:42:36 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 45647, None)
+26/08/09 19:42:36 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 45647, None)
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260809194235-0000/1 is now RUNNING
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260809194235-0000/2 is now RUNNING
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260809194235-0000/0 is now RUNNING
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260809194235-0000/3 is now RUNNING
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260809194235-0000/5 is now RUNNING
+26/08/09 19:42:36 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260809194235-0000/4 is now RUNNING
+26/08/09 19:42:37 INFO SingleEventLogFileWriter: Logging events to file:/app/outputs/validation/spark-events/app-202608
+09194235-0000.inprogress
+26/08/09 19:42:37 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached min
+RegisteredResourcesRatio: 0.0
+26/08/09 19:46:22 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This beh
+avior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+{
+  "scenario": "standalone2",
+  "run_id": "v2_m02_timeseries_standalone2",
+  "spark_master": "spark://spark-master:7077",
+  "input_format": "parquet",
+  "extract_seconds": 222.89325510699928,
+  "transform_seconds": 39.30990660700263,
+  "load_seconds": 20.240042813999025,
+  "total_seconds": 282.44320452800093,
+  "feature_rows": 1180395,
+  "raw_counts": {
+    "admissions": 58976,
+    "patients": 46520,
+    "icustays": 61532,
+    "chartevents": 330712483,
+    "labevents": 22245034
+  },
+  "outputs": {
+    "parquet": "/app/outputs/validation/features/feature_matrix_validation_timeseries_standalone2.parquet",
+    "csv_dir": "/app/outputs/validation/features/feature_matrix_validation_timeseries_standalone2_csv"
+  }
+}

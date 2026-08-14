@@ -1,0 +1,27 @@
+ Container spark-worker-2 Stopping 
+ Container spark-worker-1 Stopping 
+ Container spark-worker-1 Stopped 
+ Container spark-worker-2 Stopped 
+ Container spark-master Stopping 
+ Container spark-master Stopped 
+ Container spark-master Starting 
+ Container spark-master Started 
+ Container spark-master Running 
+ Container spark-worker-2 Recreate 
+ Container spark-worker-1 Recreate 
+ Container spark-worker-2 Recreated 
+ Container spark-worker-1 Recreated 
+ Container spark-worker-1 Starting 
+ Container spark-worker-2 Starting 
+ Container spark-worker-1 Started 
+ Container spark-worker-2 Started 
+C:\Users\ETU\Downloads\icu_mortality_project_revised\icu_mortality_project_revised\scripts\run_validation_pilot.ps1 : C
+annot validate argument on parameter 'Scenario'. The argument "local4" does not belong to the set "local8;standalone2" 
+specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again.
+At C:\Users\ETU\Downloads\icu_mortality_project_revised\icu_mortality_project_revised\scripts\run_validation_matrix.ps1
+:40 char:74
++ ...  $root 'scripts\run_validation_pilot.ps1') -Scenario $cell.scenario `
++                                                          ~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [run_validation_pilot.ps1], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,run_validation_pilot.ps1
+ 
