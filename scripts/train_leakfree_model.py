@@ -99,6 +99,7 @@ def repeated_holdout_grouped(
 
         X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
         y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
+        groups_train = groups.iloc[train_idx]
 
         estimators = build_estimators(seed)
         for model_name, estimator in estimators.items():
@@ -112,10 +113,14 @@ def repeated_holdout_grouped(
             )
             # class_weight="balanced" (see train_models.build_estimators) shifts predicted
             # probabilities away from the true prevalence. Recalibrate with a 5-fold
-            # (non-grouped) internal CV entirely WITHIN X_train/y_train -- X_test is never
-            # touched by this step, so the outer patient-level holdout guarantee above is
-            # unaffected.
-            calibrated = CalibratedClassifierCV(pipeline, method="sigmoid", cv=5)
+            # internal CV entirely WITHIN X_train/y_train -- X_test is never touched by
+            # this step, so the outer patient-level holdout guarantee above is unaffected.
+            # The inner split is itself grouped by subject_id (StratifiedGroupKFold) so a
+            # patient's admissions cannot span the inner model-fitting and calibration
+            # folds either.
+            inner_cv = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed)
+            inner_splits = list(inner_cv.split(X_train, y_train, groups=groups_train))
+            calibrated = CalibratedClassifierCV(pipeline, method="sigmoid", cv=inner_splits)
             calibrated.fit(X_train, y_train)
             y_prob = predict_positive_probability(calibrated, X_test)
             m = classification_metrics(y_test, y_prob, threshold=float(ml_cfg.get("probability_threshold", 0.5)))
@@ -172,6 +177,7 @@ def cross_validate_models_grouped(
 
         X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
         y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
+        groups_train = groups.iloc[train_idx]
         for model_name, estimator in build_estimators(seed + fold).items():
             pipeline = build_model_pipeline(
                 estimator=estimator,
@@ -181,8 +187,11 @@ def cross_validate_models_grouped(
                 use_feature_selection=bool(ml_cfg.get("use_feature_selection", False)),
                 k=ml_cfg.get("feature_selection_k", "all"),
             )
-            # Same train-only recalibration as repeated_holdout_grouped; see comment there.
-            calibrated = CalibratedClassifierCV(pipeline, method="sigmoid", cv=5)
+            # Same train-only, patient-grouped recalibration as repeated_holdout_grouped;
+            # see comment there.
+            inner_cv = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed + fold)
+            inner_splits = list(inner_cv.split(X_train, y_train, groups=groups_train))
+            calibrated = CalibratedClassifierCV(pipeline, method="sigmoid", cv=inner_splits)
             calibrated.fit(X_train, y_train)
             y_prob = predict_positive_probability(calibrated, X_test)
             m = classification_metrics(y_test, y_prob, threshold=float(ml_cfg.get("probability_threshold", 0.5)))
