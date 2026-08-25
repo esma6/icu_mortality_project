@@ -72,3 +72,21 @@ def calibration_curve_points(y_true, y_prob, n_bins: int = 10,
     sample is small or has many tied probabilities (quantile edges can merge)."""
     frac_pos, mean_pred = calibration_curve(y_true, y_prob, n_bins=n_bins, strategy=strategy)
     return {"mean_predicted": mean_pred, "frac_positive": frac_pos}
+
+
+def brier_skill_score(y_true, y_prob) -> float:
+    """Brier skill score vs. a constant-prevalence baseline (predicting the fold's own
+    prevalence for every observation). BSS <= 0 means the model's probabilities are no
+    better -- or worse -- than just predicting the base rate; this makes an
+    unrecalibrated, class-weight-distorted model's failure visible even when
+    discrimination (AUROC) looks fine, rather than only reporting a raw Brier score
+    that reads as "low" without context.
+    """
+    y_true = np.asarray(y_true).astype(int)
+    y_prob = np.asarray(y_prob, dtype=float)
+    prevalence = y_true.mean()
+    brier_model = brier_score_loss(y_true, y_prob)
+    brier_baseline = prevalence * (1 - prevalence)
+    if brier_baseline == 0:
+        return float("nan")
+    return round(1.0 - brier_model / brier_baseline, 6)

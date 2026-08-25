@@ -1,0 +1,22 @@
+{
+  "scenario": "local6",
+  "run_id": "v4_m01_timeseries_local6",
+  "spark_master": "local[6]",
+  "input_format": "parquet",
+  "extract_seconds": 390.96760326600634,
+  "transform_seconds": 45.906690325937234,
+  "load_seconds": 71.66850182798225,
+  "total_seconds": 508.5427954199258,
+  "feature_rows": 1180395,
+  "raw_counts": {
+    "admissions": 58976,
+    "patients": 46520,
+    "icustays": 61532,
+    "chartevents": 330712483,
+    "labevents": 22245034
+  },
+  "outputs": {
+    "parquet": "/app/outputs/validation/features/feature_matrix_validation_timeseries_local6.parquet",
+    "csv_dir": "/app/outputs/validation/features/feature_matrix_validation_timeseries_local6_csv"
+  }
+}

@@ -464,28 +464,31 @@ def build_lab_features(labevents: DataFrame, feature_set: str = "compact") -> Da
 
 
 def build_early_window_stay_ref(icustays: DataFrame, min_los_hours: int) -> DataFrame:
-    """Per-hadm_id ICU admission reference for the leak-free early-prediction feature set.
+    """Per-hadm_id reference ICU stay for the leak-free early-prediction feature set.
 
-    Admissions whose total ICU envelope (min intime .. max outtime across that
-    hadm_id's icustays) is shorter than min_los_hours are excluded entirely, following
-    the Harutyunyan et al. MIMIC in-hospital-mortality benchmark convention: without a
-    full observation window, an "early prediction at hour min_los_hours" is not
-    well-defined for that admission. Only hadm_id/intime_ref are returned; the stay
-    duration itself is never exposed as a downstream feature (it would leak the ICU
-    discharge time / total LOS into an early-prediction model).
+    Uses the FIRST icustay_id per hadm_id (by intime), not a cross-stay envelope. Using
+    min(intime)..max(outtime) across all of a hadm_id's ICU stays (the previous design)
+    counts any non-ICU gap between stays toward the min_los_hours qualification and lets
+    vitals/labs recorded outside any actual ICU stay leak into the "early window" --
+    flagged in pre-submission review and confirmed empirically to affect 534/31,252
+    (1.71%) of the previous cohort (hadm_ids whose combined envelope reached
+    min_los_hours but whose first individual ICU stay did not). Only the first stay's own
+    (outtime - intime) determines eligibility here. Only hadm_id/intime_ref are returned;
+    the stay duration itself is never exposed as a downstream feature.
     """
-    ref = (
-        icustays.where(F.col("intime").isNotNull())
-        .groupBy("hadm_id")
-        .agg(F.min("intime").alias("intime_ref"), F.max("outtime").alias("outtime_ref"))
+    w = Window.partitionBy("hadm_id").orderBy("intime")
+    first_stay = (
+        icustays.where(F.col("intime").isNotNull()).where(F.col("outtime").isNotNull())
+        .withColumn("_rn", F.row_number().over(w))
+        .where(F.col("_rn") == 1)
     )
     duration_hours = (
-        F.col("outtime_ref").cast("long") - F.col("intime_ref").cast("long")
+        F.col("outtime").cast("long") - F.col("intime").cast("long")
     ) / F.lit(3600.0)
     return (
-        ref.where(F.col("outtime_ref").isNotNull())
+        first_stay
         .where(duration_hours >= F.lit(float(min_los_hours)))
-        .select("hadm_id", "intime_ref")
+        .select("hadm_id", F.col("intime").alias("intime_ref"))
     )
 
 
@@ -558,12 +561,17 @@ def build_vital_features_early_window(chartevents: DataFrame, apply_range_filter
 
 def build_lab_features_early_window(labevents: DataFrame, stay_ref: DataFrame,
                                     window_hours: int) -> DataFrame:
-    """Lab features aggregated ONLY from measurements within [intime_ref, intime_ref+window_hours).
+    """Lab utilization signals from measurements within [intime_ref, intime_ref+window_hours).
 
-    Self-contained (does not call build_lab_features): that function aggregates ALL of
-    LABEVENTS per hadm_id with no time filter at all (LABEVENTS carries no charttime in
-    the other feature_set paths), which is the primary whole-stay leakage source this
-    feature set exists to remove.
+    Deliberately produces ONLY count/abnormal-flag signals, not raw value statistics.
+    LABEVENTS itemid values span many distinct clinical tests (sodium, creatinine,
+    hemoglobin, pH, ...) in different units and reference ranges; averaging valuenum
+    across itemids (the previous design) has no clinical meaning -- flagged in
+    pre-submission review. A proper fix requires an itemid-to-test mapping via
+    D_LABITEMS, which is not available in this project's local data; documented as a
+    limitation rather than worked around with an unverified itemid list. Self-contained
+    (does not call build_lab_features): that function aggregates ALL of LABEVENTS per
+    hadm_id with no time filter at all.
     """
     lab = labevents.where(F.col("valuenum").isNotNull()).where(F.col("charttime").isNotNull())
     lab = lab.join(stay_ref, on="hadm_id", how="inner")
@@ -574,13 +582,8 @@ def build_lab_features_early_window(labevents: DataFrame, stay_ref: DataFrame,
         1,
     ).otherwise(0)
     return lab.groupBy("hadm_id").agg(
-        F.avg("valuenum").alias("lab_value_mean"),
-        F.stddev("valuenum").alias("lab_value_std"),
         F.count("valuenum").cast("double").alias("lab_value_count"),
         F.sum(abnormal).cast("double").alias("lab_abnormal_count"),
-        F.min("valuenum").alias("lab_value_min"),
-        F.max("valuenum").alias("lab_value_max"),
-        F.expr("percentile_approx(valuenum, 0.5)").alias("lab_value_median"),
     )
 
 

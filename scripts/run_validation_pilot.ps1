@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('local2','local4','local8','standalone1','standalone2')]
+    [ValidateSet('local2','local4','local6','local8','standalone1','standalone2')]
     [string]$Scenario = 'local8',
     [ValidateSet('compact','timeseries')]
     [string]$Workload = 'compact',
@@ -16,7 +16,7 @@ $events = Join-Path $out 'spark-events'
 New-Item -ItemType Directory -Force -Path $logs,$events | Out-Null
 
 $workerNames = @()
-if ($Scenario -in @('local2','local4','local8')) {
+if ($Scenario -in @('local2','local4','local6','local8')) {
     $threads = $Scenario.Substring(5)
     $master = "local[$threads]"; $workers = 0
     $masterCpu = '8'; $masterMem = '8g'

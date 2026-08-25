@@ -1,0 +1,82 @@
+﻿docker.exe : 26/08/17 11:56:43 INFO SparkContext: Running Spark version 3.5.1
+At C:\Users\ETU\Downloads\icu_mortality_project_revised\icu_mortality_project_revised\scripts\run_validation_pilot.ps1:
+107 char:5
++     & docker @args 2>&1 | Out-File -FilePath $submitLog -Encoding utf ...
++     ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (26/08/17 11:56:...k version 3.5.1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+26/08/17 11:56:43 INFO SparkContext: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+26/08/17 11:56:43 INFO SparkContext: Java version 11.0.22
+26/08/17 11:56:43 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java c
+lasses where applicable
+26/08/17 11:56:43 INFO ResourceUtils: ==============================================================
+26/08/17 11:56:43 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/08/17 11:56:43 INFO ResourceUtils: ==============================================================
+26/08/17 11:56:43 INFO SparkContext: Submitted application: MIMIC_III_Distributed_ETL
+26/08/17 11:56:43 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, 
+amount: 1, script: , vendor: , memory -> name: memory, amount: 512, script: , vendor: , offHeap -> name: offHeap, amoun
+t: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/08/17 11:56:43 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/08/17 11:56:43 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/08/17 11:56:43 INFO SecurityManager: Changing view acls to: spark
+26/08/17 11:56:43 INFO SecurityManager: Changing modify acls to: spark
+26/08/17 11:56:43 INFO SecurityManager: Changing view acls groups to: 
+26/08/17 11:56:43 INFO SecurityManager: Changing modify acls groups to: 
+26/08/17 11:56:43 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view per
+missions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissi
+ons: EMPTY
+26/08/17 11:56:44 INFO Utils: Successfully started service 'sparkDriver' on port 37785.
+26/08/17 11:56:44 INFO SparkEnv: Registering MapOutputTracker
+26/08/17 11:56:44 INFO SparkEnv: Registering BlockManagerMaster
+26/08/17 11:56:44 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting top
+ology information
+26/08/17 11:56:44 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/08/17 11:56:44 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/08/17 11:56:44 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-c13db088-fe2e-4136-b43c-9e84d29647cf
+26/08/17 11:56:44 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/08/17 11:56:44 INFO SparkEnv: Registering OutputCommitCoordinator
+26/08/17 11:56:44 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/08/17 11:56:44 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/08/17 11:56:45 INFO Executor: Starting executor ID driver on host spark-master
+26/08/17 11:56:45 INFO Executor: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+26/08/17 11:56:45 INFO Executor: Java version 11.0.22
+26/08/17 11:56:45 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/08/17 11:56:45 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@31545
+cc8 for default.
+26/08/17 11:56:45 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' o
+n port 46641.
+26/08/17 11:56:45 INFO NettyBlockTransferService: Server created on spark-master 0.0.0.0:46641
+26/08/17 11:56:45 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication 
+policy
+26/08/17 11:56:45 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 46641, None)
+26/08/17 11:56:45 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:46641 with 1048.8 MiB RAM, Bl
+ockManagerId(driver, spark-master, 46641, None)
+26/08/17 11:56:45 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 46641, None)
+26/08/17 11:56:45 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 46641, None)
+26/08/17 11:56:45 INFO SingleEventLogFileWriter: Logging events to file:/app/outputs/validation/spark-events/local-1786
+967805069.inprogress
+26/08/17 12:00:14 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This beh
+avior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+{
+  "scenario": "local6",
+  "run_id": "v4_m06_compact_local6",
+  "spark_master": "local[6]",
+  "input_format": "parquet",
+  "extract_seconds": 206.79196797404438,
+  "transform_seconds": 12.810032339999452,
+  "load_seconds": 4.870257727918215,
+  "total_seconds": 224.47225804196205,
+  "feature_rows": 58976,
+  "raw_counts": {
+    "admissions": 58976,
+    "patients": 46520,
+    "icustays": 61532,
+    "chartevents": 330712483,
+    "labevents": 22245034
+  },
+  "outputs": {
+    "parquet": "/app/outputs/validation/features/feature_matrix_validation_compact_local6.parquet",
+    "csv_dir": "/app/outputs/validation/features/feature_matrix_validation_compact_local6_csv"
+  }
+}

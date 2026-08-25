@@ -23,10 +23,16 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import numpy as np
 import pandas as pd
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.model_selection import StratifiedGroupKFold
 
 from src.config import load_config
-from src.metrics import calibration_curve_points, calibration_intercept_slope, classification_metrics
+from src.metrics import (
+    brier_skill_score,
+    calibration_curve_points,
+    calibration_intercept_slope,
+    classification_metrics,
+)
 from src.plotting import plot_calibration_curve, plot_feature_importance, plot_metric_bars, plot_roc_pr_curves
 from src.preprocessing import build_model_pipeline, clean_feature_frame
 from src.reporting import summarize_mean_std
@@ -68,8 +74,8 @@ def repeated_holdout_grouped(
 
     rows = []
     diag_rows = []
-    curve_data: Dict[str, Dict[str, np.ndarray]] = {}
-    calib_data: Dict[str, Dict[str, np.ndarray]] = {}
+    oof_true: Dict[str, list] = {}
+    oof_prob: Dict[str, list] = {}
     rf_pipeline = None
 
     for r in range(n_repeats):
@@ -104,19 +110,34 @@ def repeated_holdout_grouped(
                 use_feature_selection=bool(ml_cfg.get("use_feature_selection", False)),
                 k=ml_cfg.get("feature_selection_k", "all"),
             )
-            pipeline.fit(X_train, y_train)
-            y_prob = predict_positive_probability(pipeline, X_test)
+            # class_weight="balanced" (see train_models.build_estimators) shifts predicted
+            # probabilities away from the true prevalence. Recalibrate with a 5-fold
+            # (non-grouped) internal CV entirely WITHIN X_train/y_train -- X_test is never
+            # touched by this step, so the outer patient-level holdout guarantee above is
+            # unaffected.
+            calibrated = CalibratedClassifierCV(pipeline, method="sigmoid", cv=5)
+            calibrated.fit(X_train, y_train)
+            y_prob = predict_positive_probability(calibrated, X_test)
             m = classification_metrics(y_test, y_prob, threshold=float(ml_cfg.get("probability_threshold", 0.5)))
             m.update(calibration_intercept_slope(y_test, y_prob))
+            m["brier_skill_score"] = brier_skill_score(y_test, y_prob)
             m.update({"model": model_name, "seed": seed, "repeat": r, "split": "holdout"})
             rows.append(m)
 
-            if r == 0:
-                curve_data[model_name] = {"y_true": y_test.to_numpy(), "y_prob": y_prob}
-                calib_data[model_name] = calibration_curve_points(y_test.to_numpy(), y_prob)
-                if model_name == "Random Forest":
-                    rf_pipeline = pipeline
+            oof_true.setdefault(model_name, []).append(y_test.to_numpy())
+            oof_prob.setdefault(model_name, []).append(y_prob)
+            if r == 0 and model_name == "Random Forest":
+                pipeline.fit(X_train, y_train)
+                rf_pipeline = pipeline
 
+    curve_data = {
+        name: {"y_true": np.concatenate(oof_true[name]), "y_prob": np.concatenate(oof_prob[name])}
+        for name in oof_true
+    }
+    calib_data = {
+        name: calibration_curve_points(curve_data[name]["y_true"], curve_data[name]["y_prob"])
+        for name in curve_data
+    }
     return pd.DataFrame(rows), pd.DataFrame(diag_rows), curve_data, calib_data, rf_pipeline
 
 
@@ -160,10 +181,13 @@ def cross_validate_models_grouped(
                 use_feature_selection=bool(ml_cfg.get("use_feature_selection", False)),
                 k=ml_cfg.get("feature_selection_k", "all"),
             )
-            pipeline.fit(X_train, y_train)
-            y_prob = predict_positive_probability(pipeline, X_test)
+            # Same train-only recalibration as repeated_holdout_grouped; see comment there.
+            calibrated = CalibratedClassifierCV(pipeline, method="sigmoid", cv=5)
+            calibrated.fit(X_train, y_train)
+            y_prob = predict_positive_probability(calibrated, X_test)
             m = classification_metrics(y_test, y_prob, threshold=float(ml_cfg.get("probability_threshold", 0.5)))
             m.update(calibration_intercept_slope(y_test, y_prob))
+            m["brier_skill_score"] = brier_skill_score(y_test, y_prob)
             m.update({"model": model_name, "fold": fold, "split": "cv"})
             rows.append(m)
     return pd.DataFrame(rows), pd.DataFrame(diag_rows)
@@ -225,7 +249,8 @@ def main() -> None:
     holdout_diag.to_csv(table_dir / "split_diagnostics_holdout.csv", index=False)
     metric_cols = [
         "accuracy", "balanced_accuracy", "precision", "recall_sensitivity", "specificity",
-        "f1", "mcc", "auroc", "auprc", "brier_score", "calibration_intercept", "calibration_slope",
+        "f1", "mcc", "auroc", "auprc", "brier_score", "brier_skill_score",
+        "calibration_intercept", "calibration_slope",
     ]
     holdout_summary = summarize_mean_std(holdout_df, group_cols=["model"], value_cols=metric_cols, digits=4)
     holdout_summary.to_csv(table_dir / "holdout_metrics_summary.csv", index=False)
@@ -239,10 +264,10 @@ def main() -> None:
     importance_csv = table_dir / "random_forest_feature_importance.csv"
     save_feature_importance(rf_pipeline, feature_names, importance_csv)
 
-    plot_roc_pr_curves(curve_data, figure_dir / "figure_ml_roc_pr_curves.png", label_prefix="Figure ML")
+    plot_roc_pr_curves(curve_data, figure_dir / "figure_ml_roc_pr_curves.png", label_prefix="Figure 6")
     plot_calibration_curve(
         calib_data, figure_dir / "figure_ml_calibration_curve.png",
-        title="Calibration curve — 48h leak-free early-prediction cohort",
+        title="Calibration curve — 48h early-window landmark cohort (pooled out-of-fold)",
     )
     plot_metric_bars(table_dir / "holdout_metrics_summary.csv", figure_dir / "figure_ml_model_metrics.png")
     plot_feature_importance(importance_csv, figure_dir / "figure_ml_feature_importance.png")

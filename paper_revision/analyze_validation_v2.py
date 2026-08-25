@@ -4,6 +4,9 @@ import json
 import math
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -134,11 +137,11 @@ def main() -> None:
         for i, values in enumerate(data, 1):
             rng = np.random.default_rng(20260720 + i)
             ax.scatter(rng.normal(i, .035, len(values)), values, s=15, alpha=.65)
-        ax.set_title(workload)
-        ax.set_ylabel("Toplam ETL süresi (s)")
+        ax.set_title("Admission-level workload" if workload == "compact" else "Six-hour windowed workload")
+        ax.set_ylabel("Total ETL runtime (s)")
         ax.grid(axis="y", linestyle=":", alpha=.45)
         ax.tick_params(axis="x", rotation=25)
-    fig.suptitle("Randomize, kaynak-kontrollü ETL doğrulama deneyi (n=12)")
+    fig.suptitle("Randomized, resource-capped ETL validation experiment (n=12)")
     fig.tight_layout()
     fig.savefig(OUT / "validation_runtime_distribution.png", dpi=200, bbox_inches="tight")
     plt.close(fig)

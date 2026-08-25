@@ -19,8 +19,8 @@ LABEL = {
     "1-node": "local[2]",
     "1-node-4c": "local[4]",
     "1-node-8c": "local[8]",
-    "2-node": "2 düğüm",
-    "3-node": "3 düğüm",
+    "2-node": "1-worker standalone",
+    "3-node": "2-worker standalone",
 }
 COLORS = {
     "1-node": "#0072B2",
@@ -53,11 +53,11 @@ def runtime_distribution(runs: pd.DataFrame) -> None:
                        edgecolor="white", linewidth=0.6, zorder=3)
             ax.scatter(i, vals.mean(), marker="D", s=48, color=COLORS[s], edgecolor="#222222", linewidth=0.5, zorder=4)
         ax.set_xticks(np.arange(len(ORDER)), [LABEL[s] for s in ORDER], rotation=20, ha="right")
-        ax.set_title("Compact iş yükü" if workload == "Compact" else "Timeseries iş yükü", fontweight="bold")
-        ax.set_ylabel("Toplam ETL süresi (s)")
+        ax.set_title("Admission-level workload" if workload == "Compact" else "Six-hour windowed workload", fontweight="bold")
+        ax.set_ylabel("Total ETL runtime (s)")
         style(ax)
-    fig.suptitle("İş yükü ve yürütme senaryosuna göre ETL çalışma süresi", fontweight="bold", y=1.02)
-    fig.text(0.5, -0.02, "Noktalar ölçüm koşularını (r02-r06), elmaslar ortalamayı gösterir; r01 warmup dışlanmıştır.",
+    fig.suptitle("ETL runtime by workload and execution configuration", fontweight="bold", y=1.02)
+    fig.text(0.5, -0.02, "Points denote measured runs (r02-r06), and diamonds denote means; warm-up run r01 was excluded.",
              ha="center", fontsize=9)
     fig.tight_layout()
     fig.savefig(GEN / "sekil_2_calisma_suresi.png", dpi=240, bbox_inches="tight")
@@ -67,7 +67,7 @@ def runtime_distribution(runs: pd.DataFrame) -> None:
 def phase_breakdown(summary: pd.DataFrame) -> None:
     fig, axes = plt.subplots(1, 2, figsize=(12.4, 5.0), sharey=False)
     phase_cols = ["extract_seconds_mean", "transform_seconds_mean", "load_seconds_mean"]
-    phase_labels = ["Çıkarma", "Dönüşüm", "Yazma"]
+    phase_labels = ["Extract", "Transform", "Load"]
     phase_colors = ["#0072B2", "#E69F00", "#009E73"]
     for ax, workload in zip(axes, ["Compact", "Timeseries"]):
         d = summary[summary["workload"] == workload].set_index("scenario").loc[ORDER]
@@ -80,11 +80,11 @@ def phase_breakdown(summary: pd.DataFrame) -> None:
                     fmt="none", ecolor="#333333", capsize=3, linewidth=1)
         ax.set_xticks(np.arange(len(ORDER)), [LABEL[s] for s in ORDER], rotation=20, ha="right")
         ax.set_title("Compact" if workload == "Compact" else "Timeseries", fontweight="bold")
-        ax.set_ylabel("Ortalama süre (s)")
+        ax.set_ylabel("Mean runtime (s)")
         style(ax)
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="lower center", ncol=3, frameon=False, bbox_to_anchor=(0.5, -0.03))
-    fig.suptitle("ETL aşamalarının toplam süreye katkısı (ortalama ± SS, n=5)", fontweight="bold", y=1.02)
+    fig.suptitle("Contribution of ETL stages to total runtime (mean ± SD, n=5)", fontweight="bold", y=1.02)
     fig.tight_layout(rect=(0, 0.06, 1, 1))
     fig.savefig(GEN / "sekil_3_asama_kirilimi.png", dpi=240, bbox_inches="tight")
     plt.close(fig)
@@ -115,8 +115,8 @@ def cpu_figure(ts_runs: pd.DataFrame) -> None:
             vals.append(pd.read_csv(p)["cpu_percent"].mean())
         cpu_rows.append((np.mean(vals), np.std(vals, ddof=1)))
 
-    ax1.set_xlabel("Koşu ilerlemesi (%)")
-    ax1.set_ylabel("Host CPU kullanımı (%)")
+    ax1.set_xlabel("Run progress (%)")
+    ax1.set_ylabel("Host CPU utilization (%)")
     ax1.set_xlim(0, 100); ax1.set_ylim(0, 105)
     ax1.legend(frameon=False, ncol=2, fontsize=8.5)
     style(ax1)
@@ -125,14 +125,14 @@ def cpu_figure(ts_runs: pd.DataFrame) -> None:
     ax2.bar(np.arange(len(ORDER)), means, yerr=stds, capsize=3,
             color=[COLORS[s] for s in ORDER], alpha=0.85)
     ax2.set_xticks(np.arange(len(ORDER)), [LABEL[s] for s in ORDER], rotation=25, ha="right")
-    ax2.set_ylabel("Ortalama host CPU kullanımı (%)")
+    ax2.set_ylabel("Mean host CPU utilization (%)")
     ax2.set_ylim(0, 100)
     style(ax2)
     for i, m in enumerate(means):
         ax2.text(i, m + stds[i] + 2, f"{m:.1f}", ha="center", va="bottom", fontsize=8)
 
-    fig.suptitle("ETL koşusu boyunca host CPU kullanımı", fontweight="bold", y=1.02)
-    fig.text(0.5, -0.02, "Sol: senaryo başına medyan süreye en yakın temsili koşu. Sağ: ölçüm koşularının ortalaması ± SS (n=5).",
+    fig.suptitle("Host CPU utilization during ETL execution", fontweight="bold", y=1.02)
+    fig.text(0.5, -0.02, "Left: representative run closest to the median runtime for each configuration. Right: mean ± SD across measured runs (n=5).",
              ha="center", fontsize=9)
     fig.tight_layout()
     fig.savefig(GEN / "sekil_4_cpu_kullanimi.png", dpi=240, bbox_inches="tight")
@@ -140,31 +140,36 @@ def cpu_figure(ts_runs: pd.DataFrame) -> None:
 
 
 def architecture() -> None:
-    fig, ax = plt.subplots(figsize=(12, 4.6))
+    fig, ax = plt.subplots(figsize=(12, 5.2))
     ax.axis("off")
+    ax.text(0.04, 0.91, "Shared ETL data flow", fontweight="bold", fontsize=11, color="#1F4E79")
     stages = [
-        (0.04, 0.58, 0.18, 0.23, "Parquet girdileri\n330,7 M CHARTEVENTS\n22,2 M LABEVENTS", "#DCEAF7"),
-        (0.29, 0.58, 0.18, 0.23, "Doğrulama ve\nklinik aralık filtresi", "#E8E8E8"),
-        (0.54, 0.58, 0.18, 0.23, "Compact: hadm_id\nTimeseries: hadm_id + 6 saat", "#F8E6C4"),
-        (0.79, 0.58, 0.17, 0.23, "Kalıcı özellik ürünü\n58.976 / 1.180.395 satır", "#DDF1E5"),
+        (0.04, 0.61, 0.20, 0.21, "Parquet inputs\n330.7M CHARTEVENTS\n22.2M LABEVENTS", "#DCEAF7"),
+        (0.29, 0.61, 0.18, 0.21, "Record validation\nand clinical-range\nfiltering", "#E8E8E8"),
+        (0.52, 0.61, 0.21, 0.21, "Two output structures\nAdmission: hadm_id\n6-hour: hadm_id + window", "#F8E6C4"),
+        (0.78, 0.61, 0.18, 0.21, "Persisted datasets\n58,976 admissions\n1,180,395 windows", "#DDF1E5"),
     ]
     for x, y, w, h, text, color in stages:
         rect = plt.Rectangle((x, y), w, h, facecolor=color, edgecolor="#555555", linewidth=1.0)
-        ax.add_patch(rect); ax.text(x+w/2, y+h/2, text, ha="center", va="center", fontsize=9.5)
-    for x in [0.23, 0.48, 0.73]:
-        ax.annotate("", xy=(x+0.05, 0.695), xytext=(x, 0.695), arrowprops=dict(arrowstyle="->", color="#555555", lw=1.5))
+        ax.add_patch(rect)
+        ax.text(x+w/2, y+h/2, text, ha="center", va="center", fontsize=8.8, linespacing=1.15)
+    for start, end in [(0.24, 0.29), (0.47, 0.52), (0.73, 0.78)]:
+        ax.annotate("", xy=(end, 0.715), xytext=(start, 0.715),
+                    arrowprops=dict(arrowstyle="->", color="#555555", lw=1.5))
 
-    ax.text(0.04, 0.40, "Yürütme senaryoları", fontweight="bold", fontsize=10)
+    ax.plot([0.04, 0.96], [0.51, 0.51], color="#C8D3DE", linewidth=1.0)
+    ax.text(0.04, 0.44, "Spark execution modes compared on the same physical machine",
+            fontweight="bold", fontsize=10.5, color="#1F4E79")
     scenarios = ["local[2]", "local[4]", "local[8]", "Master + 1 worker", "Master + 2 worker"]
     for i, s in enumerate(scenarios):
         x = 0.04 + i * 0.19
-        ax.add_patch(plt.Rectangle((x, 0.16), 0.16, 0.13, facecolor=COLORS[ORDER[i]], alpha=0.22,
+        ax.add_patch(plt.Rectangle((x, 0.22), 0.16, 0.11, facecolor=COLORS[ORDER[i]], alpha=0.22,
                                    edgecolor=COLORS[ORDER[i]], linewidth=1.2))
-        ax.text(x+0.08, 0.225, s, ha="center", va="center", fontsize=9)
-    ax.text(0.5, 0.04, "Tüm senaryolar aynı Windows hostu, SSD'yi ve 12 mantıksal çekirdeği paylaşır.",
+        ax.text(x+0.08, 0.275, s, ha="center", va="center", fontsize=8.7)
+    ax.text(0.5, 0.09, "Fixed resources: Windows 11, one NVMe SSD, and 12 logical processors",
             ha="center", fontsize=9, style="italic", color="#444444")
     ax.set_xlim(0, 1); ax.set_ylim(0, 1)
-    fig.savefig(GEN / "sekil_1_mimari.png", dpi=240, bbox_inches="tight")
+    fig.savefig(GEN / "sekil_1_mimari.png", dpi=240, bbox_inches="tight", pad_inches=0.12)
     plt.close(fig)
 
 
