@@ -7,9 +7,9 @@ resource budget on a single host**, across two MIMIC-III feature-engineering reg
 same pipeline on an in-hospital mortality prediction task with patient-grouped
 cross-validation.
 
-Manuscript draft (target: IEEE Journal of Biomedical and Health Informatics):
-`paper_revision/ieee_jbhi/IEEE_JBHI_Submission_Manuscript.docx`, built from this
-repository's aggregate outputs by `paper_revision/ieee_jbhi/build_ieee_jbhi_manuscript.py`.
+Submission manuscript (target: *IEEE Journal of Biomedical and Health Informatics*):
+`manuscript/IEEE_JBHI_Submission_Manuscript.docx`. The aggregate benchmark results used
+in the manuscript can be regenerated with the scripts in `manuscript/analysis/`.
 
 > **MIMIC-III data are not included and must not be committed here.** You need
 > credentialed PhysioNet access to `mimic-iii-clinical-database-1.4`. See
@@ -27,7 +27,7 @@ repository's aggregate outputs by `paper_revision/ieee_jbhi/build_ieee_jbhi_manu
 | `scripts/train_models.py` | Trains classifiers on the whole-stay `compact`/`timeseries` feature products (used for the ETL benchmark, **not** leak-free — see [Two feature families](#two-feature-families-etl-benchmark-vs-clinical-validation)). |
 | `scripts/train_leakfree_model.py` | Trains classifiers on the leak-free `early_window` feature product with `subject_id`-grouped `StratifiedGroupKFold`, plus calibration metrics. This produces the numbers reported in the manuscript's clinical validation section. |
 | `src/` | Shared library code: config loading (`config.py`), preprocessing pipeline (`preprocessing.py`), classification + calibration metrics (`metrics.py`), plotting (`plotting.py`), summary tables (`reporting.py`), resource monitoring (`monitoring.py`). |
-| `paper_revision/` | The manuscript build script/draft (`ieee_jbhi/`) and the analysis scripts that turn `outputs/` into the manuscript's tables/text (`analyze_validation_v2.py`, `analyze_local6_vs_standalone2.py`). |
+| `manuscript/` | Submission-ready IEEE JBHI manuscript and analysis scripts that regenerate the aggregate benchmark summaries reported in it. |
 | `outputs/` | Generated tables, figures, and logs (aggregate only — see below). |
 | `docker-compose.yml` | One Spark master + up to two Spark workers (`apache/spark:3.5.1`), used both for the ETL benchmark topologies and for `spark://` runs of the leak-free ETL job. |
 
@@ -109,7 +109,7 @@ and the corresponding figures.
 
 ```powershell
 scripts\run_validation_matrix.ps1 -Repeats 12 -Seed 20260720
-python paper_revision/analyze_validation_v2.py
+python manuscript/analysis/analyze_validation.py
 ```
 
 This is a randomized complete-block design over the same 5 topologies x 2 workloads,
@@ -125,7 +125,7 @@ host-load drift affects them equally):
 
 ```powershell
 scripts\run_local6_standalone2_matrix.ps1 -Repeats 12 -Seed 20260817
-python paper_revision/analyze_local6_vs_standalone2.py
+python manuscript/analysis/analyze_equal_capacity.py
 ```
 
 ### 3.3. Leak-free clinical validation
@@ -160,12 +160,11 @@ python scripts/run_full_pipeline.py --config config.yaml --repeats 5 --cv-folds 
   local[8]'s 8 task threads, a same-session, block-randomized `local[6]` (task-slot-matched)
   vs. two-worker-standalone comparison (n=12 paired blocks) still favored local execution
   for both workloads, indicating the advantage is not solely a task-slot-count artifact.
-- **Leakage-aware 48h cohort** (29,886 admissions with a real single ICU stay >= 48h,
-  25,271 patients, 12.4% mortality — landmarked on each admission's *first* `icustay_id`,
-  not a multi-stay envelope): HistGradientBoosting reached AUROC 0.815±0.005 (5-fold grouped
-  CV) / 0.815±0.005 (repeated holdout), Brier skill score 0.169, and a
-  within-training-fold-recalibrated calibration intercept/slope of 0.09/1.07 (vs. a large
-  negative intercept before recalibration).
+- **Leakage-aware 48h cohort** (29,886 admissions, 25,271 patients, 12.4% mortality;
+  landmarked on each admission's first ICU stay, which was required to last at least 48 h):
+  HistGradientBoosting reached AUROC 0.813±0.006 and AUPRC 0.402±0.023 in five-fold
+  patient-grouped cross-validation. Within-training-fold patient-grouped recalibration
+  yielded a Brier skill score of 0.168 and a calibration intercept/slope of 0.099/1.068.
 
 These are **fixed-budget, single-host, single-center** findings (see the manuscript's
 Section VII for the full validity-threat discussion) — not evidence of multi-host strong
@@ -199,5 +198,5 @@ scaling, and not an externally validated clinical model.
 ├── src/                  # shared library code
 ├── scripts/               # ETL, experiment orchestration, ML training, figures
 ├── outputs/                # aggregate tables/figures/logs (see .gitignore for exclusions)
-└── paper_revision/         # manuscript drafts + analysis/build scripts
+└── manuscript/             # submission manuscript + aggregate-analysis scripts
 ```
