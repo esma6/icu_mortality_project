@@ -5,7 +5,7 @@ the *IEEE Journal of Biomedical and Health Informatics*.
 
 The manuscript reports aggregate results generated from the repository's tracked
 outputs. The analysis snapshot cited in its data-availability statement is commit
-`6fe3460679acea2eafe494025a3ab81050b6bd1d`.
+`5b2bdc08f750bda353e0c3ef8645990359bd0913`.
 
 The scripts in `analysis/` regenerate the confirmatory benchmark summaries:
 
